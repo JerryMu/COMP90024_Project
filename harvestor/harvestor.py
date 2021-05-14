@@ -83,7 +83,7 @@ search = "place:%s #covid-19 OR #Covid -filter:retweets" % place_id
 #tweets = api.search(q="place:%s fuck" % place_id)
 
 all_tweets = []
-for index, tweet in enumerate(tweepy.Cursor(api.search,q="place:%s"%place_id,lang="zh",since="2020-03-15").items(700)) :
+for index, tweet in enumerate(tweepy.Cursor(api.search,q="place:%s"%place_id,lang="en").items(700)) :
     print(index, tweet.text + " | " + tweet.place.name  + " | " + str(tweet.created_at))
     #all_tweets.append({"id":str(tweet.id), "uid":str(tweet.user.id), "text":str(tweet.text), "created_at":str(tweet.created_at), "city":str(tweet.place.name), "country":str(tweet.place.country), "box":str(tweet.place.bounding_box.coordinates)})
 
