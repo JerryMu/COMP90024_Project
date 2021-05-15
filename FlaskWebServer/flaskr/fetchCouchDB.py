@@ -1,4 +1,5 @@
 import couchdb2
+import pandas as pd
 master_node = 'http://admin:admin@172.26.128.217:5984/'
 couch = couchdb2.Server(master_node)
 tweet_db = couch['tweet']
@@ -12,6 +13,8 @@ def view(self, designname, viewname,
      update=None):
 """
 
-result = tweet_db.view("tweetDesign", "test2", key=None, group_level=2)
-for item in result:
-    print(item)
+rows = tweet_db.view("tweetDesign", "get_basic_data", include_docs=True)
+
+data = [row['doc'] for row in rows]
+df = pd.DataFrame(data)
+print('finish')

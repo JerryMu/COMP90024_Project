@@ -2,33 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8280a10d-1e14-4614-b49b-53076eabc60e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/COMP90024_Project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FlaskWebServer/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FlaskWebServer/.idea/csv-plugin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FlaskWebServer/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FlaskWebServer/.idea/flaskProject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FlaskWebServer/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FlaskWebServer/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FlaskWebServer/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FlaskWebServer/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FlaskWebServer/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FlaskWebServer/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FlaskWebServer/flaskr/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FlaskWebServer/flaskr/createViews.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FlaskWebServer/flaskr/fetchCouchDB.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FlaskWebServer/flaskr/flask.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FlaskWebServer/flaskr/ip.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FlaskWebServer/flaskr/testApis.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FlaskWebServer/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FlaskWebServer/start.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FlaskWebServer/flaskr/createViews.py" beforeDir="false" afterPath="$PROJECT_DIR$/../FlaskWebServer/flaskr/createViews.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FlaskWebServer/flaskr/fetchCouchDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/../FlaskWebServer/flaskr/fetchCouchDB.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +35,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1620356162806</updated>
-      <workItem from="1620356163970" duration="3615000" />
+      <workItem from="1620356163970" duration="3653000" />
     </task>
     <servers />
   </component>
