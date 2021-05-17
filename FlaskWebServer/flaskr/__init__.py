@@ -2,30 +2,31 @@ import os
 from time import time
 from flask import Flask
 import logging
-from . import testApis
+from . import index, welcome_page, scenario_1, scenario_2, scenario_3, scenario_4, scenario_5
 
-# create logger
-logging.basicConfig(filename='flask.log',
-                    filemode='w',
-                    format='"%(asctime)s;%(levelname)s;%(message)s"',
-                    datefmt='%H:%M:%S',
-                    level=logging.DEBUG)
 
-logger = logging.getLogger("\nflask")
-logger.setLevel(logging.DEBUG)
-
-# create console handler and set level to debug
-ch = logging.StreamHandler()
-ch.setLevel(logging.DEBUG)
-
-# create formatter
-formatter = logging.Formatter("%(asctime)s;%(levelname)s;%(message)s")
-
-# add formatter to ch
-ch.setFormatter(formatter)
-
-# add ch to loggertestApis
-logger.addHandler(ch)
+# # create logger
+# logging.basicConfig(filename='flask.log',
+#                     filemode='w',
+#                     format='"%(asctime)s;%(levelname)s;%(message)s"',
+#                     datefmt='%H:%M:%S',
+#                     level=logging.INFO)
+#
+# logger = logging.getLogger("\nflask")
+# logger.setLevel(logging.DEBUG)
+#
+# # create console handler and set level to debug
+# ch = logging.StreamHandler()
+# ch.setLevel(logging.DEBUG)
+#
+# # create formatter
+# formatter = logging.Formatter("%(asctime)s;%(levelname)s;%(message)s")
+#
+# # add formatter to ch
+# ch.setFormatter(formatter)
+#
+# # add ch to loggertestApis
+# logger.addHandler(ch)
 
 def create_app(test_config=None):
     # create and configure the app
@@ -48,13 +49,10 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
+    """
+    register blueprints
+    """
+    app.register_blueprint(index.bp)
 
-    app.register_blueprint(testApis.bp)
-
-    logger.debug('FINISH')
 
     return app

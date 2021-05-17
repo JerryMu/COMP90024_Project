@@ -10,6 +10,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/FlaskWebServer/flaskr/__init__.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/FlaskWebServer/flaskr/index.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/app.py">
           <value>
             <Attribute>
@@ -32,6 +46,34 @@
           </value>
         </entry>
         <entry key="/flaskr/createViews.py">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/flaskr/fetchCouchDB.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/flaskr/templates/frontend/Scenario-3.html">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/flaskr/templates/frontend/index.html">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/flaskr/templates/index.html">
           <value>
             <Attribute>
               <option name="separator" value=":" />
