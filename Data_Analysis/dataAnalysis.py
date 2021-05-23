@@ -263,22 +263,22 @@ for c in city:
         scenario_2_db['time_of_tweet'+ c] = time_of_tweet[c].to_dict()
 
     try:
-        scenario_2_db['text_word_count_at_different_time' + c] = text_word_count_at_different_time[c].to_dict()
+        scenario_2_db['text_word_count_at_different_time' + c] = text_word_count_at_different_time.loc[c].to_dict()
     except couchdb.http.ResourceConflict:
         scenario_2_db.delete(scenario_2_db['text_word_count_at_different_time' + c])
-        scenario_2_db['text_word_count_at_different_time' + c] = text_word_count_at_different_time[c].to_dict()
+        scenario_2_db['text_word_count_at_different_time' + c] = text_word_count_at_different_time.loc[c].to_dict()
 
     try:
-        scenario_2_db['day_of_week' + c] = day_of_week[c].to_dict()
+        scenario_2_db['day_of_week' + c] = day_of_week.loc[c].to_dict()
     except couchdb.http.ResourceConflict:
         scenario_2_db.delete(scenario_2_db['day_of_week' + c])
-        scenario_2_db['day_of_week' + c] = day_of_week[c].to_dict()
+        scenario_2_db['day_of_week' + c] = day_of_week.loc[c].to_dict()
 
     try:
-        scenario_2_db['text_word_count_at_different_day' + c] = text_word_count_at_different_day[c].to_dict()
+        scenario_2_db['text_word_count_at_different_day' + c] = text_word_count_at_different_day.loc[c].to_dict()
     except couchdb.http.ResourceConflict:
         scenario_2_db.delete(scenario_2_db['text_word_count_at_different_day' + c])
-        scenario_2_db['text_word_count_at_different_day' + c] = text_word_count_at_different_day[c].to_dict()
+        scenario_2_db['text_word_count_at_different_day' + c] = text_word_count_at_different_day.loc[c].to_dict()
 
 print('Scenario 2 finished')
 
