@@ -182,6 +182,8 @@ try:
 except couchdb.http.ResourceConflict:
     scenario_1_db.delete(scenario_1_db['covid_data'])
     scenario_1_db['covid_data'] = covid_data.to_dict()
+
+print('Scenario 1 finished')
 '''
 Scenario 2: People's twetting behaviours.
 Output:
@@ -225,12 +227,12 @@ word_count_ct = {'Sydney': word_count_syd, 'Melbourne':word_count_melb ,'Brisban
                  'Perth (WA)':word_count_perth, 'Adelaide':word_count_adelaide}
 
 # outputs
-time_of_tweet = tweet.groupby(['city','time_of_tweet']).size().apply(lambda df: df.xs(df.name).to_dict()).to_dict()
-text_len_at_different_time = tweet.groupby(['city','time_of_tweet'])['text_len'].describe()[['count', 'mean']].apply(lambda df: df.xs(df.name).to_dict()).to_dict()
-text_word_count_at_different_time = tweet.groupby(['city','time_of_tweet'])['text_word_count'].describe()[['count', 'mean']].apply(lambda df: df.xs(df.name).to_dict()).to_dict()
-day_of_week = tweet.groupby(['city','day_of_week']).size().apply(lambda df: df.xs(df.name).to_dict()).to_dict()
-text_word_count_at_different_day = tweet.groupby(['city','day_of_week'])['text_word_count'].describe()[['count', 'mean']].apply(lambda df: df.xs(df.name).to_dict()).to_dict()
-text_len_at_different_day = tweet.groupby(['city','day_of_week'])['text_len'].describe()[['count','mean']].apply(lambda df: df.xs(df.name).to_dict()).to_dict()
+time_of_tweet = tweet.groupby(['city','time_of_tweet']).size()
+text_len_at_different_time = tweet.groupby(['city','time_of_tweet'])['text_len'].describe()[['count', 'mean']]
+text_word_count_at_different_time = tweet.groupby(['city','time_of_tweet'])['text_word_count'].describe()[['count', 'mean']]
+day_of_week = tweet.groupby(['city','day_of_week']).size()
+text_word_count_at_different_day = tweet.groupby(['city','day_of_week'])['text_word_count'].describe()[['count', 'mean']]
+text_len_at_different_day = tweet.groupby(['city','day_of_week'])['text_len'].describe()[['count','mean']]
 
 try:
     server.create("scenario_2")
@@ -240,53 +242,45 @@ except couchdb.http.PreconditionFailed:
 
 scenario_2_db = server['scenario_2']
 
+
+
 try:
     scenario_2_db['num_tweet_ct'] = num_tweet_ct
 except couchdb.http.ResourceConflict:
     scenario_2_db.delete(scenario_2_db['num_tweet_ct'])
     scenario_2_db['num_tweet_ct'] = num_tweet_ct
 
-try:
-    scenario_2_db['text_len_ct'] = text_len_ct
-except couchdb.http.ResourceConflict:
-    scenario_2_db.delete(scenario_2_db['num_tweet_ct'])
-    scenario_2_db['text_len_ct'] = text_len_ct
 try:
     scenario_2_db['word_count_ct'] = word_count_ct
 except couchdb.http.ResourceConflict:
     scenario_2_db.delete(scenario_2_db['word_count_ct'])
     scenario_2_db['word_count_ct'] = word_count_ct
-try:
-    scenario_2_db['time_of_tweet'] = time_of_tweet.to_dict()
-except couchdb.http.ResourceConflict:
-    scenario_2_db.delete(scenario_2_db['time_of_tweet'])
-    scenario_2_db['time_of_tweet'] = time_of_tweet.to_dict()
-try:
-    scenario_2_db['text_len_at_different_time'] = text_len_at_different_time.to_dict()
-except couchdb.http.ResourceConflict:
-    scenario_2_db.delete(scenario_2_db['text_len_at_different_time'])
-    scenario_2_db['text_len_at_different_time'] = text_len_at_different_time.to_dict()
-try:
-    scenario_2_db['text_word_count_at_different_time'] = text_word_count_at_different_time.to_dict()
-except couchdb.http.ResourceConflict:
-    scenario_2_db.delete(scenario_2_db['text_word_count_at_different_time'])
-    scenario_2_db['text_word_count_at_different_time'] = text_word_count_at_different_time.to_dict()
-try:
-    scenario_2_db['day_of_week'] = day_of_week.to_dict()
-except couchdb.http.ResourceConflict:
-    scenario_2_db.delete(scenario_2_db['day_of_week'])
-    scenario_2_db['day_of_week'] = day_of_week.to_dict()
-try:
-    scenario_2_db['text_word_count_at_different_day'] = text_word_count_at_different_day.to_dict()
-except couchdb.http.ResourceConflict:
-    scenario_2_db.delete(scenario_2_db['text_word_count_at_different_day'])
-    scenario_2_db['text_word_count_at_different_day'] = text_word_count_at_different_day.to_dict()
-try:
-    scenario_2_db['text_len_at_different_day'] = text_len_at_different_day.to_dict()
-except couchdb.http.ResourceConflict:
-    scenario_2_db.delete(scenario_2_db['text_word_count_at_different_day'])
-    scenario_2_db['text_word_count_at_different_day'] = text_word_count_at_different_day.to_dict()
+for c in city:
+    try:
+        scenario_2_db['time_of_tweet'] = time_of_tweet[c].to_dict()
+    except couchdb.http.ResourceConflict:
+        scenario_2_db.delete(scenario_2_db['time_of_tweet'])
+        scenario_2_db['time_of_tweet'] = time_of_tweet[c].to_dict()
 
+    try:
+        scenario_2_db['text_word_count_at_different_time'] = text_word_count_at_different_time.to_dict()
+    except couchdb.http.ResourceConflict:
+        scenario_2_db.delete(scenario_2_db['text_word_count_at_different_time'])
+        scenario_2_db['text_word_count_at_different_time'] = text_word_count_at_different_time.to_dict()
+
+    try:
+        scenario_2_db['day_of_week'] = day_of_week.to_dict()
+    except couchdb.http.ResourceConflict:
+        scenario_2_db.delete(scenario_2_db['day_of_week'])
+        scenario_2_db['day_of_week'] = day_of_week.to_dict()
+
+    try:
+        scenario_2_db['text_word_count_at_different_day'] = text_word_count_at_different_day.to_dict()
+    except couchdb.http.ResourceConflict:
+        scenario_2_db.delete(scenario_2_db['text_word_count_at_different_day'])
+        scenario_2_db['text_word_count_at_different_day'] = text_word_count_at_different_day.to_dict()
+
+print('Scenario 2 finished')
 
 
 '''
@@ -357,7 +351,7 @@ except couchdb.http.ResourceConflict:
     scenario_3_db.delete(scenario_3_db['text_sentiment_Perth'])
     scenario_3_db['text_sentiment_Perth'] = text_sentiment_Perth.to_dict()
 
-
+print('Scenario 3 finished')
 '''
 Scenario 4: Does COVID-19 influence the labour market and people's emotion?
 
@@ -385,3 +379,5 @@ try:
 except couchdb.http.ResourceConflict:
     scenario_4_db.delete(scenario_4_db['change_in_youth_employment_rate'])
     scenario_4_db['change_in_unemployment_rate'] = change_in_unemployment_rate.to_dict()
+
+print('Scenario 4 finished')
