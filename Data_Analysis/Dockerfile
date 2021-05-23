@@ -17,12 +17,5 @@ COPY . /app
 
 RUN pip --no-cache install -r requirements.txt
 
-
-ENV FLASK_APP=flaskr
-ENV FLASK_ENV=development
-ENV port=5000
-
-EXPOSE $port
-
 ENTRYPOINT ["python3"]
 CMD [dataAnalysis.py]
