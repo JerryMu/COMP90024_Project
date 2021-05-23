@@ -1,8 +1,7 @@
-import couchdb
 import numpy as np
 import pandas as pd
 import text2emotion as te
-import couchdb2
+import couchdb
 
 MASTER_NODE_URL = 'http://admin:admin@172.26.128.217:5984/'
 '''
@@ -162,7 +161,13 @@ covid_data['Death_rate'] = covid_data['Total lives lost'] / covid_data['Total ca
 covid_data['Vaccine complete'] = covid_data['Total doses administered(until 2021-05-15)'] / covid_data[
     'Total doses needed'] * 100
 
-server.create('Scenario_1')
+try:
+    server.create("scenario_1")
+except couchdb.http.PreconditionFailed:
+    pass
+
+scenario_1_db = server['scenario_1']
+scenario_1_db['ct_attention_covid'] = ct_attention_covid
 '''
 Scenario 2: People's twetting behaviours.
 Output:
@@ -213,7 +218,10 @@ day_of_week = tweet.groupby(['city','day_of_week']).size()
 text_word_count_at_different_day = tweet.groupby(['city','day_of_week'])['text_word_count'].describe()[['count', 'mean']]
 text_len_at_different_day = tweet.groupby(['city','day_of_week'])['text_len'].describe()[['count','mean']]
 
-server.create('Scenario_2')
+try:
+    server.create("scenario_2")
+except couchdb.http.PreconditionFailed:
+    pass
 
 '''
 Scenario 3: Find the happiest city by sentiment analysis
@@ -246,8 +254,10 @@ text_sentiment_Perth = pd.DataFrame()
 text_sentiment_Perth['text_sentiment'] = tweet.iloc[Perth_index_lst,5].apply(te.get_emotion)
 text_sentiment_Perth = text_sentiment_Perth['text_sentiment'].apply(pd.Series)
 
-server.create('Scenario_3')
-
+try:
+    server.create("scenario_3")
+except couchdb.http.PreconditionFailed:
+    pass
 '''
 Scenario 4: Does COVID-19 influence the labour market and people's emotion?
 
@@ -259,4 +269,7 @@ labour_market_2020 = pd.read_csv("Labour Market 2020.csv")
 change_in_unemployment_rate = (labour_market_2020['unemployment_rate(15+)']-labour_market_2018['unemployment_rate(15+)'])/labour_market_2018['unemployment_rate(15+)']
 change_in_youth_employment_rate = (labour_market_2020['youth_employment_rate_15_24']-labour_market_2018['youth_employment_rate_15_24'])/labour_market_2018['youth_employment_rate_15_24']
 
-server.create('Scenario_4')
+try:
+    server.create("scenario_4")
+except couchdb.http.PreconditionFailed:
+    pass

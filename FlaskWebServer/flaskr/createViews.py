@@ -1,7 +1,5 @@
 import couchdb2
 
-
-
 master_node = 'http://admin:admin@172.26.128.217:5984/'
 couch = couchdb2.Server(master_node)
 tweet_db = couch['all_tweet']
