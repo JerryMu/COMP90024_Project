@@ -225,12 +225,12 @@ word_count_ct = {'Sydney': word_count_syd, 'Melbourne':word_count_melb ,'Brisban
                  'Perth (WA)':word_count_perth, 'Adelaide':word_count_adelaide}
 
 # outputs
-time_of_tweet = tweet.groupby(['city','time_of_tweet']).size()
-text_len_at_different_time = tweet.groupby(['city','time_of_tweet'])['text_len'].describe()[['count', 'mean']]
-text_word_count_at_different_time = tweet.groupby(['city','time_of_tweet'])['text_word_count'].describe()[['count', 'mean']]
-day_of_week = tweet.groupby(['city','day_of_week']).size()
-text_word_count_at_different_day = tweet.groupby(['city','day_of_week'])['text_word_count'].describe()[['count', 'mean']]
-text_len_at_different_day = tweet.groupby(['city','day_of_week'])['text_len'].describe()[['count','mean']]
+time_of_tweet = tweet.groupby(['city','time_of_tweet']).size().apply(lambda df: df.xs(df.name).to_dict()).to_dict()
+text_len_at_different_time = tweet.groupby(['city','time_of_tweet'])['text_len'].describe()[['count', 'mean']].apply(lambda df: df.xs(df.name).to_dict()).to_dict()
+text_word_count_at_different_time = tweet.groupby(['city','time_of_tweet'])['text_word_count'].describe()[['count', 'mean']].apply(lambda df: df.xs(df.name).to_dict()).to_dict()
+day_of_week = tweet.groupby(['city','day_of_week']).size().apply(lambda df: df.xs(df.name).to_dict()).to_dict()
+text_word_count_at_different_day = tweet.groupby(['city','day_of_week'])['text_word_count'].describe()[['count', 'mean']].apply(lambda df: df.xs(df.name).to_dict()).to_dict()
+text_len_at_different_day = tweet.groupby(['city','day_of_week'])['text_len'].describe()[['count','mean']].apply(lambda df: df.xs(df.name).to_dict()).to_dict()
 
 try:
     server.create("scenario_2")
