@@ -167,9 +167,21 @@ except couchdb.http.PreconditionFailed:
     pass
 
 scenario_1_db = server['scenario_1']
-scenario_1_db['ct_attention_covid'] = ct_attention_covid
-scenario_1_db['covid_tweet_in_ct'] = covid_tweet_in_ct
-scenario_1_db['covid_data'] = covid_data.to_dict()
+try:
+    scenario_1_db['ct_attention_covid'] = ct_attention_covid
+except couchdb.http.ResourceConflict:
+    scenario_1_db.delete(scenario_1_db['ct_attention_covid'])
+    scenario_1_db['ct_attention_covid'] = ct_attention_covid
+try:
+    scenario_1_db['covid_tweet_in_ct'] = covid_tweet_in_ct
+except couchdb.http.ResourceConflict:
+    scenario_1_db.delete(scenario_1_db['covid_tweet_in_ct'])
+    scenario_1_db['covid_tweet_in_ct'] = covid_tweet_in_ct
+try:
+    scenario_1_db['covid_data'] = covid_data.to_dict()
+except couchdb.http.ResourceConflict:
+    scenario_1_db.delete(scenario_1_db['covid_data'])
+    scenario_1_db['covid_data'] = covid_data.to_dict()
 '''
 Scenario 2: People's twetting behaviours.
 Output:
@@ -225,7 +237,22 @@ try:
 except couchdb.http.PreconditionFailed:
     pass
 
+
 scenario_2_db = server['scenario_2']
+
+
+try:
+    scenario_2_db.delete(scenario_2_db['num_tweet_ct'])
+    scenario_2_db.delete(scenario_2_db['text_len_ct'])
+    scenario_2_db.delete(scenario_2_db['word_count_ct'])
+    scenario_2_db.delete(scenario_2_db['time_of_tweet'])
+    scenario_2_db.delete(scenario_2_db['text_len_at_different_time'])
+    scenario_2_db.delete(scenario_2_db['text_word_count_at_different_time'])
+    scenario_2_db.delete(scenario_2_db['day_of_week'])
+    scenario_2_db.delete(scenario_2_db['text_word_count_at_different_day'])
+    scenario_2_db.delete(scenario_2_db['text_len_at_different_day'])
+except couchdb.http.ResourceNotFound:
+    pass
 scenario_2_db['num_tweet_ct'] = num_tweet_ct
 scenario_2_db['text_len_ct'] = text_len_ct
 scenario_2_db['word_count_ct'] = word_count_ct
@@ -235,6 +262,7 @@ scenario_2_db['text_word_count_at_different_time'] = text_word_count_at_differen
 scenario_2_db['day_of_week'] = day_of_week.to_dict()
 scenario_2_db['text_word_count_at_different_day'] = text_word_count_at_different_day.to_dict()
 scenario_2_db['text_len_at_different_day'] = text_len_at_different_day.to_dict()
+
 
 '''
 Scenario 3: Find the happiest city by sentiment analysis
@@ -273,6 +301,17 @@ except couchdb.http.PreconditionFailed:
     pass
 
 scenario_3_db = server['scenario_3']
+
+try:
+    scenario_3_db.delete(scenario_3_db['text_sentiment_Sydney'])
+    scenario_3_db.delete(scenario_3_db['text_sentiment_Adelaide'])
+    scenario_3_db.delete(scenario_3_db['text_sentiment_Brisbane'])
+    scenario_3_db.delete(scenario_3_db['text_sentiment_Melbourne'])
+    scenario_3_db.delete(scenario_3_db['text_sentiment_Perth'])
+except couchdb.http.ResourceNotFound:
+    pass
+
+
 scenario_3_db['text_sentiment_Sydney'] = text_sentiment_Sydney.to_dict()
 scenario_3_db['text_sentiment_Adelaide'] = text_sentiment_Adelaide.to_dict()
 scenario_3_db['text_sentiment_Brisbane'] = text_sentiment_Brisbane.to_dict()
