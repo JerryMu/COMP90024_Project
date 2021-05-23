@@ -18,7 +18,7 @@ new_tweets_db = server["new_tweet"]
 rows = new_tweets_db.view('_all_docs', include_docs=True)
 tw = [row['doc'] for row in rows]
 new_tweet = pd.DataFrame(tw)
-
+print('load tweets finished')
 '''
 Preprocessing
 '''
@@ -117,7 +117,7 @@ tweet = tweet_data_5_ct(tweet)
 tweet = tweet[tweet['city'].isin(city)]
 tweet = tweet.reset_index()
 ct_tweet_count = tweet['city'].value_counts()
-
+print('preprocessing finished')
 '''
 Scenario 1 The frequency of people tweeting about 'covid-19' in different cities. and How does people's attention to 
 covid-19 on twitter correlate to the real covid-19 situation in different cities?
@@ -257,28 +257,28 @@ except couchdb.http.ResourceConflict:
     scenario_2_db['word_count_ct'] = word_count_ct
 for c in city:
     try:
-        scenario_2_db['time_of_tweet'] = time_of_tweet[c].to_dict()
+        scenario_2_db['time_of_tweet' + c] = time_of_tweet[c].to_dict()
     except couchdb.http.ResourceConflict:
-        scenario_2_db.delete(scenario_2_db['time_of_tweet'])
-        scenario_2_db['time_of_tweet'] = time_of_tweet[c].to_dict()
+        scenario_2_db.delete(scenario_2_db['time_of_tweet' + c])
+        scenario_2_db['time_of_tweet'+ c] = time_of_tweet[c].to_dict()
 
     try:
-        scenario_2_db['text_word_count_at_different_time'] = text_word_count_at_different_time.to_dict()
+        scenario_2_db['text_word_count_at_different_time' + c] = text_word_count_at_different_time[c].to_dict()
     except couchdb.http.ResourceConflict:
-        scenario_2_db.delete(scenario_2_db['text_word_count_at_different_time'])
-        scenario_2_db['text_word_count_at_different_time'] = text_word_count_at_different_time.to_dict()
+        scenario_2_db.delete(scenario_2_db['text_word_count_at_different_time' + c])
+        scenario_2_db['text_word_count_at_different_time' + c] = text_word_count_at_different_time[c].to_dict()
 
     try:
-        scenario_2_db['day_of_week'] = day_of_week.to_dict()
+        scenario_2_db['day_of_week' + c] = day_of_week[c].to_dict()
     except couchdb.http.ResourceConflict:
-        scenario_2_db.delete(scenario_2_db['day_of_week'])
-        scenario_2_db['day_of_week'] = day_of_week.to_dict()
+        scenario_2_db.delete(scenario_2_db['day_of_week' + c])
+        scenario_2_db['day_of_week' + c] = day_of_week[c].to_dict()
 
     try:
-        scenario_2_db['text_word_count_at_different_day'] = text_word_count_at_different_day.to_dict()
+        scenario_2_db['text_word_count_at_different_day' + c] = text_word_count_at_different_day[c].to_dict()
     except couchdb.http.ResourceConflict:
-        scenario_2_db.delete(scenario_2_db['text_word_count_at_different_day'])
-        scenario_2_db['text_word_count_at_different_day'] = text_word_count_at_different_day.to_dict()
+        scenario_2_db.delete(scenario_2_db['text_word_count_at_different_day' + c])
+        scenario_2_db['text_word_count_at_different_day' + c] = text_word_count_at_different_day[c].to_dict()
 
 print('Scenario 2 finished')
 
@@ -368,6 +368,7 @@ try:
 except couchdb.http.PreconditionFailed:
     pass
 scenario_4_db = server['scenario_4']
+
 try:
     scenario_4_db['change_in_unemployment_rate'] = change_in_unemployment_rate.to_dict()
 except couchdb.http.ResourceConflict:
