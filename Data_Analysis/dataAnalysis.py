@@ -240,28 +240,53 @@ except couchdb.http.PreconditionFailed:
 
 scenario_2_db = server['scenario_2']
 
+try:
+    scenario_2_db['num_tweet_ct'] = num_tweet_ct
+except couchdb.http.ResourceConflict:
+    scenario_2_db.delete(scenario_2_db['num_tweet_ct'])
+    scenario_2_db['num_tweet_ct'] = num_tweet_ct
 
 try:
+    scenario_2_db['text_len_ct'] = text_len_ct
+except couchdb.http.ResourceConflict:
     scenario_2_db.delete(scenario_2_db['num_tweet_ct'])
-    scenario_2_db.delete(scenario_2_db['text_len_ct'])
+    scenario_2_db['text_len_ct'] = text_len_ct
+try:
+    scenario_2_db['word_count_ct'] = word_count_ct
+except couchdb.http.ResourceConflict:
     scenario_2_db.delete(scenario_2_db['word_count_ct'])
+    scenario_2_db['word_count_ct'] = word_count_ct
+try:
+    scenario_2_db['time_of_tweet'] = time_of_tweet.to_dict()
+except couchdb.http.ResourceConflict:
     scenario_2_db.delete(scenario_2_db['time_of_tweet'])
+    scenario_2_db['time_of_tweet'] = time_of_tweet.to_dict()
+try:
+    scenario_2_db['text_len_at_different_time'] = text_len_at_different_time.to_dict()
+except couchdb.http.ResourceConflict:
     scenario_2_db.delete(scenario_2_db['text_len_at_different_time'])
+    scenario_2_db['text_len_at_different_time'] = text_len_at_different_time.to_dict()
+try:
+    scenario_2_db['text_word_count_at_different_time'] = text_word_count_at_different_time.to_dict()
+except couchdb.http.ResourceConflict:
     scenario_2_db.delete(scenario_2_db['text_word_count_at_different_time'])
+    scenario_2_db['text_word_count_at_different_time'] = text_word_count_at_different_time.to_dict()
+try:
+    scenario_2_db['day_of_week'] = day_of_week.to_dict()
+except couchdb.http.ResourceConflict:
     scenario_2_db.delete(scenario_2_db['day_of_week'])
+    scenario_2_db['day_of_week'] = day_of_week.to_dict()
+try:
+    scenario_2_db['text_word_count_at_different_day'] = text_word_count_at_different_day.to_dict()
+except couchdb.http.ResourceConflict:
     scenario_2_db.delete(scenario_2_db['text_word_count_at_different_day'])
-    scenario_2_db.delete(scenario_2_db['text_len_at_different_day'])
-except couchdb.http.ResourceNotFound:
-    pass
-scenario_2_db['num_tweet_ct'] = num_tweet_ct
-scenario_2_db['text_len_ct'] = text_len_ct
-scenario_2_db['word_count_ct'] = word_count_ct
-scenario_2_db['time_of_tweet'] = time_of_tweet.to_dict()
-scenario_2_db['text_len_at_different_time'] = text_len_at_different_time.to_dict()
-scenario_2_db['text_word_count_at_different_time'] = text_word_count_at_different_time.to_dict()
-scenario_2_db['day_of_week'] = day_of_week.to_dict()
-scenario_2_db['text_word_count_at_different_day'] = text_word_count_at_different_day.to_dict()
-scenario_2_db['text_len_at_different_day'] = text_len_at_different_day.to_dict()
+    scenario_2_db['text_word_count_at_different_day'] = text_word_count_at_different_day.to_dict()
+try:
+    scenario_2_db['text_len_at_different_day'] = text_len_at_different_day.to_dict()
+except couchdb.http.ResourceConflict:
+    scenario_2_db.delete(scenario_2_db['text_word_count_at_different_day'])
+    scenario_2_db['text_word_count_at_different_day'] = text_word_count_at_different_day.to_dict()
+
 
 
 '''
@@ -303,20 +328,35 @@ except couchdb.http.PreconditionFailed:
 scenario_3_db = server['scenario_3']
 
 try:
+    scenario_3_db['text_sentiment_Sydney'] = text_sentiment_Sydney.to_dict()
+except couchdb.http.ResourceConflict:
     scenario_3_db.delete(scenario_3_db['text_sentiment_Sydney'])
+    scenario_3_db['text_sentiment_Sydney'] = text_sentiment_Sydney.to_dict()
+
+try:
+    scenario_3_db['text_sentiment_Adelaide'] = text_sentiment_Adelaide.to_dict()
+except couchdb.http.ResourceConflict:
     scenario_3_db.delete(scenario_3_db['text_sentiment_Adelaide'])
+    scenario_3_db['text_sentiment_Adelaide'] = text_sentiment_Adelaide.to_dict()
+
+try:
+    scenario_3_db['text_sentiment_Brisbane'] = text_sentiment_Brisbane.to_dict()
+except couchdb.http.ResourceConflict:
     scenario_3_db.delete(scenario_3_db['text_sentiment_Brisbane'])
+    scenario_3_db['text_sentiment_Brisbane'] = text_sentiment_Brisbane.to_dict()
+
+try:
+    scenario_3_db['text_sentiment_Melbourne'] = text_sentiment_Melbourne.to_dict()
+except couchdb.http.ResourceConflict:
     scenario_3_db.delete(scenario_3_db['text_sentiment_Melbourne'])
+    scenario_3_db['text_sentiment_Melbourne'] = text_sentiment_Melbourne.to_dict()
+
+try:
+    scenario_3_db['text_sentiment_Perth'] = text_sentiment_Perth.to_dict()
+except couchdb.http.ResourceConflict:
     scenario_3_db.delete(scenario_3_db['text_sentiment_Perth'])
-except couchdb.http.ResourceNotFound:
-    pass
+    scenario_3_db['text_sentiment_Perth'] = text_sentiment_Perth.to_dict()
 
-
-scenario_3_db['text_sentiment_Sydney'] = text_sentiment_Sydney.to_dict()
-scenario_3_db['text_sentiment_Adelaide'] = text_sentiment_Adelaide.to_dict()
-scenario_3_db['text_sentiment_Brisbane'] = text_sentiment_Brisbane.to_dict()
-scenario_3_db['text_sentiment_Melbourne'] = text_sentiment_Melbourne.to_dict()
-scenario_3_db['text_sentiment_Perth'] = text_sentiment_Perth.to_dict()
 
 '''
 Scenario 4: Does COVID-19 influence the labour market and people's emotion?
@@ -334,5 +374,14 @@ try:
 except couchdb.http.PreconditionFailed:
     pass
 scenario_4_db = server['scenario_4']
-scenario_4_db['change_in_unemployment_rate'] = change_in_unemployment_rate.to_dict()
-scenario_3_db['change_in_youth_employment_rate'] = change_in_youth_employment_rate.to_dict()
+try:
+    scenario_4_db['change_in_unemployment_rate'] = change_in_unemployment_rate.to_dict()
+except couchdb.http.ResourceConflict:
+    scenario_4_db.delete(scenario_4_db['change_in_unemployment_rate'])
+    scenario_4_db['change_in_unemployment_rate'] = change_in_unemployment_rate.to_dict()
+
+try:
+    scenario_4_db['change_in_youth_employment_rate'] = change_in_youth_employment_rate.to_dict()
+except couchdb.http.ResourceConflict:
+    scenario_4_db.delete(scenario_4_db['change_in_youth_employment_rate'])
+    scenario_4_db['change_in_unemployment_rate'] = change_in_unemployment_rate.to_dict()
