@@ -1,3 +1,5 @@
+wheel
+numpy
 pandas
 text2emotion
 couchdb2
