@@ -168,17 +168,19 @@ except couchdb.http.PreconditionFailed:
 
 scenario_1_db = server['scenario_1']
 scenario_1_db['ct_attention_covid'] = ct_attention_covid
+scenario_1_db['covid_tweet_in_ct'] = covid_tweet_in_ct
+scenario_1_db['covid_data'] = covid_data.to_dict()
 '''
 Scenario 2: People's twetting behaviours.
 Output:
 num_tweet_ct: tweets count for every city
 text_len_ct： tweets length for every city
 word_count_ct: tweets average words for every city
-time_of_tweet: 
-text_len_at_different_time:
-text_word_count_at_different_time:
-text_word_count_at_different_day: 
-text_len_at_different_day: 
+time_of_tweet: tweet number counts for every hour
+text_len_at_different_time: tweet average length for every hour
+text_word_count_at_different_time: tweet word counts for every hour
+text_word_count_at_different_day: tweet word counts for days of week
+text_len_at_different_day: tweet length for days of week
 
 '''
 population = covid_data['Population(greater capital city)']
@@ -223,6 +225,17 @@ try:
 except couchdb.http.PreconditionFailed:
     pass
 
+scenario_2_db = server['scenario_2']
+scenario_2_db['num_tweet_ct'] = num_tweet_ct
+scenario_2_db['text_len_ct'] = text_len_ct
+scenario_2_db['word_count_ct'] = word_count_ct
+scenario_2_db['time_of_tweet'] = time_of_tweet.to_dict()
+scenario_2_db['text_len_at_different_time'] = text_len_at_different_time.to_dict()
+scenario_2_db['text_word_count_at_different_time'] = text_word_count_at_different_time.to_dict()
+scenario_2_db['day_of_week'] = day_of_week.to_dict()
+scenario_2_db['text_word_count_at_different_day'] = text_word_count_at_different_day.to_dict()
+scenario_2_db['text_len_at_different_day'] = text_len_at_different_day.to_dict()
+
 '''
 Scenario 3: Find the happiest city by sentiment analysis
 
@@ -258,6 +271,14 @@ try:
     server.create("scenario_3")
 except couchdb.http.PreconditionFailed:
     pass
+
+scenario_3_db = server['scenario_3']
+scenario_3_db['text_sentiment_Sydney'] = text_sentiment_Sydney.to_dict()
+scenario_3_db['text_sentiment_Adelaide'] = text_sentiment_Adelaide.to_dict()
+scenario_3_db['text_sentiment_Brisbane'] = text_sentiment_Brisbane.to_dict()
+scenario_3_db['text_sentiment_Melbourne'] = text_sentiment_Melbourne.to_dict()
+scenario_3_db['text_sentiment_Perth'] = text_sentiment_Perth.to_dict()
+
 '''
 Scenario 4: Does COVID-19 influence the labour market and people's emotion?
 
@@ -273,3 +294,6 @@ try:
     server.create("scenario_4")
 except couchdb.http.PreconditionFailed:
     pass
+scenario_4_db = server['scenario_4']
+scenario_4_db['change_in_unemployment_rate'] = change_in_unemployment_rate.to_dict()
+scenario_3_db['change_in_youth_employment_rate'] = change_in_youth_employment_rate.to_dict()
