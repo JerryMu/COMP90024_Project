@@ -1,0 +1,3 @@
+pandas
+text2emotion
+couchdb2
