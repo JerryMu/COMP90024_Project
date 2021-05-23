@@ -257,28 +257,28 @@ except couchdb.http.ResourceConflict:
     scenario_2_db['word_count_ct'] = word_count_ct
 for c in city:
     try:
-        scenario_2_db['time_of_tweet' + c] = time_of_tweet[c].to_dict()
+        scenario_2_db['time_of_tweet' + ' ' + c] = time_of_tweet[c].to_dict()
     except couchdb.http.ResourceConflict:
-        scenario_2_db.delete(scenario_2_db['time_of_tweet' + c])
-        scenario_2_db['time_of_tweet'+ c] = time_of_tweet[c].to_dict()
+        scenario_2_db.delete(scenario_2_db['time_of_tweet' + ' ' + c])
+        scenario_2_db['time_of_tweet' + ' ' + c] = time_of_tweet[c].to_dict()
 
     try:
-        scenario_2_db['text_word_count_at_different_time' + c] = text_word_count_at_different_time.loc[c].to_dict()
+        scenario_2_db['text_word_count_at_different_time' + ' ' + c] = text_word_count_at_different_time.loc[c].to_dict()
     except couchdb.http.ResourceConflict:
-        scenario_2_db.delete(scenario_2_db['text_word_count_at_different_time' + c])
-        scenario_2_db['text_word_count_at_different_time' + c] = text_word_count_at_different_time.loc[c].to_dict()
+        scenario_2_db.delete(scenario_2_db['text_word_count_at_different_time' + ' ' + c])
+        scenario_2_db['text_word_count_at_different_time' + ' ' + c] = text_word_count_at_different_time.loc[c].to_dict()
 
     try:
-        scenario_2_db['day_of_week' + c] = day_of_week.loc[c].to_dict()
+        scenario_2_db['day_of_week' + ' ' + c] = day_of_week.loc[c].to_dict()
     except couchdb.http.ResourceConflict:
-        scenario_2_db.delete(scenario_2_db['day_of_week' + c])
-        scenario_2_db['day_of_week' + c] = day_of_week.loc[c].to_dict()
+        scenario_2_db.delete(scenario_2_db['day_of_week' + ' ' + c])
+        scenario_2_db['day_of_week' + ' ' + c] = day_of_week.loc[c].to_dict()
 
     try:
-        scenario_2_db['text_word_count_at_different_day' + c] = text_word_count_at_different_day.loc[c].to_dict()
+        scenario_2_db['text_word_count_at_different_day' + ' ' + c] = text_word_count_at_different_day.loc[c].to_dict()
     except couchdb.http.ResourceConflict:
-        scenario_2_db.delete(scenario_2_db['text_word_count_at_different_day' + c])
-        scenario_2_db['text_word_count_at_different_day' + c] = text_word_count_at_different_day.loc[c].to_dict()
+        scenario_2_db.delete(scenario_2_db['text_word_count_at_different_day' + ' ' + c])
+        scenario_2_db['text_word_count_at_different_day' + ' ' + c] = text_word_count_at_different_day.loc[c].to_dict()
 
 print('Scenario 2 finished')
 
@@ -322,34 +322,34 @@ except couchdb.http.PreconditionFailed:
 scenario_3_db = server['scenario_3']
 
 try:
-    scenario_3_db['text_sentiment_Sydney'] = text_sentiment_Sydney.to_dict()
+    scenario_3_db['text_sentiment_Sydney'] = text_sentiment_Sydney.describe().to_dict()
 except couchdb.http.ResourceConflict:
     scenario_3_db.delete(scenario_3_db['text_sentiment_Sydney'])
-    scenario_3_db['text_sentiment_Sydney'] = text_sentiment_Sydney.to_dict()
+    scenario_3_db['text_sentiment_Sydney'] = text_sentiment_Sydney.describe().to_dict()
 
 try:
-    scenario_3_db['text_sentiment_Adelaide'] = text_sentiment_Adelaide.to_dict()
+    scenario_3_db['text_sentiment_Adelaide'] = text_sentiment_Adelaide.describe().to_dict()
 except couchdb.http.ResourceConflict:
     scenario_3_db.delete(scenario_3_db['text_sentiment_Adelaide'])
-    scenario_3_db['text_sentiment_Adelaide'] = text_sentiment_Adelaide.to_dict()
+    scenario_3_db['text_sentiment_Adelaide'] = text_sentiment_Adelaide.describe().to_dict()
 
 try:
-    scenario_3_db['text_sentiment_Brisbane'] = text_sentiment_Brisbane.to_dict()
+    scenario_3_db['text_sentiment_Brisbane'] = text_sentiment_Brisbane.describe().to_dict()
 except couchdb.http.ResourceConflict:
     scenario_3_db.delete(scenario_3_db['text_sentiment_Brisbane'])
-    scenario_3_db['text_sentiment_Brisbane'] = text_sentiment_Brisbane.to_dict()
+    scenario_3_db['text_sentiment_Brisbane'] = text_sentiment_Brisbane.describe().to_dict()
 
 try:
-    scenario_3_db['text_sentiment_Melbourne'] = text_sentiment_Melbourne.to_dict()
+    scenario_3_db['text_sentiment_Melbourne'] = text_sentiment_Melbourne.describe().to_dict()
 except couchdb.http.ResourceConflict:
     scenario_3_db.delete(scenario_3_db['text_sentiment_Melbourne'])
-    scenario_3_db['text_sentiment_Melbourne'] = text_sentiment_Melbourne.to_dict()
+    scenario_3_db['text_sentiment_Melbourne'] = text_sentiment_Melbourne.describe().to_dict()
 
 try:
-    scenario_3_db['text_sentiment_Perth'] = text_sentiment_Perth.to_dict()
+    scenario_3_db['text_sentiment_Perth'] = text_sentiment_Perth.describe().to_dict()
 except couchdb.http.ResourceConflict:
     scenario_3_db.delete(scenario_3_db['text_sentiment_Perth'])
-    scenario_3_db['text_sentiment_Perth'] = text_sentiment_Perth.to_dict()
+    scenario_3_db['text_sentiment_Perth'] = text_sentiment_Perth.describe().to_dict()
 
 print('Scenario 3 finished')
 '''
