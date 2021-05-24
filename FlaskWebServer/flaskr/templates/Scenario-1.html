@@ -7,18 +7,16 @@
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
     <title>Scenario 1</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='nicepage.css')}}" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='nicepage.css') }}" media="screen">
 <link rel="stylesheet" href="{{ url_for('static', filename='Scenario-1.css') }}" media="screen">
     <script class="u-script" type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}" defer=""></script>
     <script class="u-script" type="text/javascript" src="{{ url_for('static', filename='nicepage.js') }}" defer=""></script>
     <meta name="generator" content="Nicepage 3.15.3, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
 
-
       <script>
-          let flaskData = JSON.parse('{{data | tojson | safe}}');
+          var flaskData = JSON.parse('{{data | tojson}}');
       </script>
-    
     
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
@@ -26,7 +24,6 @@
 		"name": "",
 		"url": "{{ url_for('main.index') }}",
 		"logo": "{{ url_for('static', filename='images/unimelb_Icon.png') }}"
-
 }</script>
     <meta property="og:title" content="Scenario 1">
     <meta property="og:type" content="website">
@@ -50,8 +47,9 @@
           <div class="u-custom-menu u-nav-container">
             <ul class="u-nav u-spacing-30 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-grey-90" href="{{ url_for('main.welcome_page') }}" style="padding: 10px 0px;">Welcome Page</a>
 </li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-grey-90" href="{{ url_for('main.scenario_1') }}" style="padding: 10px 0px;">Scenario 1</a>
-</li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-grey-90" href="{{ url_for('main.page_1') }}" style="padding: 10px 0px;">Scenario 3</a>
 </li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-grey-90" href="{{ url_for('main.scenario_2') }}" style="padding: 10px 0px;">Scenario 2</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-grey-90" href="{{ url_for('main.scenario_3') }}" style="padding: 10px 0px;">Scenario 3</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-grey-90" href="{{ url_for('main.scenario_4') }}" style="padding: 10px 0px;">Scenario 4</a>
 </li></ul>
           </div>
           <div class="u-custom-menu u-nav-container-collapse">
@@ -60,15 +58,16 @@
                 <div class="u-menu-close"></div>
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{ url_for('main.welcome_page') }}" style="padding: 10px 0px;">Welcome Page</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{ url_for('main.scenario_1') }}" style="padding: 10px 0px;">Scenario 1</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{ url_for('main.page_1') }}" style="padding: 10px 0px;">Scenario 3</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{ url_for('main.scenario_2') }}" style="padding: 10px 0px;">Scenario 2</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{ url_for('main.scenario_3') }}" style="padding: 10px 0px;">Scenario 3</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{ url_for('main.scenario_4') }}" style="padding: 10px 0px;">Scenario 4</a>
 </li></ul>
               </div>
             </div>
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
           </div>
         </nav>
-      </div></header>
+      </div></header> 
     <section class="u-align-center u-clearfix u-custom-color-3 u-section-1" id="sec-f60b">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-absolute-hcenter-xs u-expanded-height-lg u-expanded-height-md u-expanded-height-xl u-expanded-height-xs u-palette-4-light-1 u-shape u-shape-rectangle u-shape-1"></div>
@@ -163,23 +162,11 @@ var options2 = {
   series: [
     {
       name: "Totol number of twitter mentioned COVID-19 (Per 1000)",
-      data: [
-      13.57,
-        10.05,
-        6.52,
-        6.44,
-        9.89
-      ]
+      data: flaskData.tweet_mentions_per_1000_value
     }
   ],
   xaxis: {
-    categories: [
-      "Sydney",
-      "Melbourne",
-      "Brisbane",
-      "Perth (WA)",
-      "Adelaide"
-  ,  ]
+    categories: flaskData.tweet_mentions_per_1000_key
   },
   fill: {
     colors: ["#7147c9"]
@@ -245,19 +232,11 @@ var options3 = {
   series: [
     {
       name: "The number of people who is/was infected within 100 people in this state.",
-      data: [
-      0.068023,0.307455,0.030628,0.038056,0.041907
-      ]
+      data: flaskData.infection_100_value
     }
   ],
   xaxis: {
-    categories: [
-      "Sydney",
-      "Melbourne",
-      "Brisbane",
-      "Perth (WA)",
-      "Adelaide"
-  ,  ]
+    categories: flaskData.infection_100_key
   },
   fill: {
     colors: ["#7147c9"]
@@ -309,19 +288,11 @@ var options4 = {
   series: [
     {
       name: "The number of people who complete 2 doese vaccination within 100 people in this state.",
-      data: [
-      1.715175,2.329991,1.642575,2.423823,2.245634
-      ]
+      data: flaskData.vaccination_100_value
     }
   ],
   xaxis: {
-    categories: [
-      "Sydney",
-      "Melbourne",
-      "Brisbane",
-      "Perth (WA)",
-      "Adelaide"
-  ,  ]
+    categories: flaskData.vaccination_100_key
   },
   fill: {
     colors: ["#7147c9"]
@@ -365,7 +336,7 @@ chart4.render(); </script>
     </section>
     <section class="u-clearfix u-custom-color-3 u-section-4" id="sec-58c4">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h3 class="u-text u-text-1">这里写分析<span class="u-text-custom-color-1"></span>
+        <h3 class="u-text u-text-1">Scenario Analysis:<br>
         </h3>
         <p class="u-text u-text-2">各种各样的分析,可以把report内容发到这</p>
         <img src="{{ url_for('static', filename='images/1.jpg') }}" alt="" class="u-image u-image-round u-radius-10 u-image-1" data-image-width="900" data-image-height="878">
@@ -387,6 +358,9 @@ background-image: linear-gradient(to right, white, #cdccf8) !important
       <a class="u-link" href="https://nicepage.com/html-website-builder" target="_blank">
         <span>HTML Website Builder</span>
       </a>. 
-    </section>
+    </section><span style="height: 64px; width: 64px; margin-left: 0px; margin-right: auto; margin-top: 0px; background-image: none; right: 20px; bottom: 20px;" class="u-back-to-top u-icon u-icon-circle u-opacity u-opacity-85 u-palette-5-base u-spacing-15" data-href="#">
+        <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 551.13 551.13"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1d98"></use></svg>
+        <svg class="u-svg-content" enable-background="new 0 0 551.13 551.13" viewBox="0 0 551.13 551.13" xmlns="http://www.w3.org/2000/svg" id="svg-1d98"><path d="m275.565 189.451 223.897 223.897h51.668l-275.565-275.565-275.565 275.565h51.668z"></path></svg>
+    </span>
   </body>
 </html>

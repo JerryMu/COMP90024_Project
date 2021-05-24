@@ -49,7 +49,8 @@
   width: 479px;
   min-height: 259px;
   animation-duration: 1500ms;
-  margin: -302px calc(((100% - 1140px) / 2) + 14px) 60px auto;
+  height: auto;
+  margin: -304px calc(((100% - 1140px) / 2) + 14px) 60px auto;
 }
 
 .u-section-1 .u-container-layout-2 {
@@ -87,6 +88,7 @@
 
   .u-section-1 .u-group-1 {
     margin-right: calc(((100% - 940px) / 2) + 14px);
+    height: auto;
   }
 }
 
@@ -532,7 +534,7 @@
 }
 
 .u-section-3 .u-sheet-1 {
-  min-height: 885px;
+  min-height: 912px;
 }
 
 .u-section-3 .u-shape-1 {
@@ -543,14 +545,33 @@
 }
 
 .u-section-3 .u-custom-html-1 {
-  min-height: 655px;
-  height: auto;
+  min-height: 653px;
   background-image: none;
-  margin: 80px 200px 0 0;
+  height: auto;
+  margin: 115px 324px 0 0;
+}
+
+.u-section-3 .u-group-1 {
+  width: 390px;
+  min-height: 239px;
+  animation-duration: 1500ms;
+  height: auto;
+  margin: -115px 0 20px auto;
+}
+
+.u-section-3 .u-container-layout-1 {
+  padding: 2px 50px 29px;
 }
 
 .u-section-3 .u-text-1 {
-  margin: -140px 23px 60px 904px;
+  font-weight: 700;
+  font-size: 1.875rem;
+  margin: 0;
+}
+
+.u-section-3 .u-text-2 {
+  line-height: 1.8;
+  margin: 1px 0 0;
 }
 
 @media (max-width: 1199px) {
@@ -559,24 +580,38 @@
   }
 
   .u-section-3 .u-custom-html-1 {
-    margin-right: 0;
+    margin-right: 124px;
   }
 
-  .u-section-3 .u-text-1 {
-    margin-right: -51px;
-    margin-left: 727px;
+  .u-section-3 .u-group-1 {
+    margin-right: calc(((100% - 940px) / 2) + 14px);
+    height: auto;
   }
 }
 
 @media (max-width: 991px) {
-  .u-section-3 .u-text-1 {
-    margin-left: 507px;
+  .u-section-3 .u-custom-html-1 {
+    margin-right: 0;
+  }
+
+  .u-section-3 .u-group-1 {
+    margin-right: calc(((100% - 720px) / 2) + 14px);
+  }
+
+  .u-section-3 .u-container-layout-1 {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 
 @media (max-width: 767px) {
-  .u-section-3 .u-text-1 {
-    margin-left: 327px;
+  .u-section-3 .u-group-1 {
+    margin-right: calc(((100% - 540px) / 2) + 14px);
+  }
+
+  .u-section-3 .u-container-layout-1 {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
@@ -586,8 +621,13 @@
     left: 0;
   }
 
+  .u-section-3 .u-group-1 {
+    width: 340px;
+    margin-right: calc(((100% - 340px) / 2));
+  }
+
   .u-section-3 .u-text-1 {
-    margin-left: 127px;
+    font-size: 1.5rem;
   }
 }.u-section-4 {
   background-image: none;

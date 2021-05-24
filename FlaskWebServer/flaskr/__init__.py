@@ -2,7 +2,7 @@ import os
 from time import time
 from flask import Flask
 import logging
-from . import index, scenario_1, scenario_2, scenario_3, scenario_4, scenario_5
+from . import index
 
 
 # # create logger

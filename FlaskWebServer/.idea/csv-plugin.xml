@@ -73,6 +73,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/flaskr/templates/Scenario-3.html">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/flaskr/templates/Scenario_1/Sce_1_BarChart_TotalNumCOVID.html">
           <value>
             <Attribute>
