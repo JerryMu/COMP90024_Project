@@ -14,11 +14,10 @@
     <meta name="generator" content="Nicepage 3.15.3, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
-    
-    
-    
-    
-    
+
+      <script>
+          var flaskData = JSON.parse('{{data | tojson}}');
+      </script>
     
     
     <script type="application/ld+json">{
@@ -137,9 +136,7 @@ var options1 = {
   series: [
     {
       name: "How happy the user is.",
-      data: [
-      0.142110,0.163640,0.15054,0.133995,0.142000
-      ]
+      data: flaskData.happiness_values
     }
   ],
   xaxis: {
@@ -219,9 +216,7 @@ var options2 = {
   series: [
     {
       name: "How sad the user is.",
-      data: [
-      0.15440,0.155785,0.156630,0.173310	,0.150590
-      ]
+      data: flaskData.sadness_values
     }
   ],
   xaxis: {
@@ -301,9 +296,7 @@ var options3 = {
   series: [
     {
       name: "How angry the user is.",
-      data: [
-      0.043300,0.044360,0.039045,0.044935,0.048700
-      ]
+      data: flaskData.angry_values
     }
   ],
   xaxis: {

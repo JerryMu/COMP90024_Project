@@ -395,7 +395,7 @@ def run():
         scenario_4_db['change_in_youth_employment_rate'] = change_in_youth_employment_rate.to_dict()
     except couchdb.http.ResourceConflict:
         scenario_4_db.delete(scenario_4_db['change_in_youth_employment_rate'])
-        scenario_4_db['change_in_unemployment_rate'] = change_in_unemployment_rate.to_dict()
+        scenario_4_db['change_in_youth_employment_rate'] = change_in_unemployment_rate.to_dict()
 
     print('Scenario 4 finished')
 

@@ -207,13 +207,34 @@ def scenario_2():
 @bp.route('/scenario_3', methods=['GET', 'POST'])
 def scenario_3():
     scenario_3_db = get_db('scenario_3')
+    table_name = ['text_sentiment_Sydney', 'text_sentiment_Melbourne',
+                  'text_sentiment_Brisbane', 'text_sentiment_Perth','text_sentiment_Adelaide',]
 
+    happiness_values = []
+    sadness_values = []
+    angry_values = []
+
+    for table_name in table_name:
+        table = scenario_3_db[table_name]
+        happiness_values.append(round(table['Happy']['mean'], 2))
+        sadness_values.append(round(table['Sad']['mean'], 2))
+        angry_values.append(round(table['Angry']['mean'], 2))
     data = {
-
+        'happiness_values': happiness_values,
+        'sadness_values': sadness_values,
+        'angry_values': angry_values
     }
     return render_template('Scenario-3.html', data=data)
 
 
 @bp.route('/scenario_4', methods=['GET', 'POST'])
 def scenario_4():
-    return render_template('Scenario-4.html')
+    scenario_4_db = get_db('scenario_4')
+    unemployment_value = list(scenario_4_db['change_in_unemployment_rate'].values())[2:]
+    # unemployment_value_youth = list(scenario_4_db['change_in_youth_employment_rate'].values)[2:]
+    data = {
+        'unemployment_value': unemployment_value,
+        # 'unemployment_value_youth': unemployment_value_youth
+
+    }
+    return render_template('Scenario-4.html', data=data)
