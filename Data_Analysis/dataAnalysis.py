@@ -69,7 +69,16 @@ def run():
 
         for i in range(tweet_data.shape[0]):
             data_time = str(tweet_data['created_at'][i])
-            all_tweet_time.append(data_time[11:13])
+            city = str(tweet_data['city'][i])
+            if city == 'Perth (WA)':
+                real_time = int(data_time[11:13]) + 8
+                all_tweet_time.append(str(real_time))
+            elif city == 'Adelaide':
+                real_time = int(data_time[11:13]) + 9
+                all_tweet_time.append(str(real_time))
+            else:
+                real_time = int(data_time[11:13]) + 10
+                all_tweet_time.append(str(real_time))
             all_tweet_date.append(data_time[:3])
 
         tweet_data['time_of_tweet'] = all_tweet_time
@@ -307,11 +316,11 @@ def run():
     Output
     '''
     
-    Sydney_index_lst = tweet[tweet['city'] == 'Sydney'].sample(3000).index
-    Adelaide_index_lst = tweet[tweet['city'] == 'Adelaide'].sample(3000).index
-    Brisbane_index_lst = tweet[tweet['city'] == 'Brisbane'].sample(3000).index
-    Melbourne_index_lst = tweet[tweet['city'] == 'Melbourne'].sample(3000).index
-    Perth_index_lst = tweet[tweet['city'] == 'Perth (WA)'].sample(3000).index
+    Sydney_index_lst = tweet[tweet['city'] == 'Sydney'].sample(2000).index
+    Adelaide_index_lst = tweet[tweet['city'] == 'Adelaide'].sample(2000).index
+    Brisbane_index_lst = tweet[tweet['city'] == 'Brisbane'].sample(2000).index
+    Melbourne_index_lst = tweet[tweet['city'] == 'Melbourne'].sample(2000).index
+    Perth_index_lst = tweet[tweet['city'] == 'Perth (WA)'].sample(2000).index
 
     text_sentiment_Sydney = pd.DataFrame()
     text_sentiment_Sydney['text_sentiment'] = tweet.iloc[Sydney_index_lst, 4].apply(te.get_emotion)
@@ -398,7 +407,7 @@ def run():
         scenario_4_db['change_in_youth_employment_rate'] = change_in_youth_employment_rate.to_dict()
     except couchdb.http.ResourceConflict:
         scenario_4_db.delete(scenario_4_db['change_in_youth_employment_rate'])
-        scenario_4_db['change_in_youth_employment_rate'] = change_in_unemployment_rate.to_dict()
+        scenario_4_db['change_in_youth_employment_rate'] = change_in_youth_employment_rate.to_dict()
 
     print('Scenario 4 finished')
 

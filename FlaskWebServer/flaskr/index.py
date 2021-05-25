@@ -231,10 +231,10 @@ def scenario_3():
 def scenario_4():
     scenario_4_db = get_db('scenario_4')
     unemployment_value = list(scenario_4_db['change_in_unemployment_rate'].values())[2:]
-    # unemployment_value_youth = list(scenario_4_db['change_in_youth_employment_rate'].values)[2:]
+    unemployment_value_youth = list(scenario_4_db['change_in_youth_employment_rate'].values)[2:]
     data = {
         'unemployment_value': unemployment_value,
-        # 'unemployment_value_youth': unemployment_value_youth
+        'unemployment_value_youth': unemployment_value_youth
 
     }
     return render_template('Scenario-4.html', data=data)
