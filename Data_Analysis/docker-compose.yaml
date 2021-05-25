@@ -1,0 +1,6 @@
+version: '3'
+services:
+  Data_Analysis:
+    build: .
+    volumes:
+      - .:/usr/src/app
