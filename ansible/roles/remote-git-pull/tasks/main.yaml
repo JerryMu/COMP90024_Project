@@ -1,3 +1,0 @@
-- git:
-    repo: '{{ repo }}'
-    dest: '{{ working_dir }}'

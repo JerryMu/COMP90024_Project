@@ -6,11 +6,3 @@
   roles:
     - role: couchdb
 
-
-# - hosts: all
-#   become: yes
-#   gather_facts: no
-#   vars_files:
-#     - host_vars/remote_vars.yaml
-#   roles:
-#     - role: remote-user-timeline
