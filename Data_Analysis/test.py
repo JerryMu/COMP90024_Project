@@ -1,3 +1,10 @@
+# Part of COMP90024 Project Team members are
+# Ziyuan Xiao (940448)
+# Pengyu Mu(890756)
+# Dechao Sun (980546)
+# Seehoi Chow(980301)
+# Yuexin Li (959634)
+
 import couchdb
 import pandas as pd
 # MASTER_NODE_URL = 'http://admin:admin@172.26.128.217:5984/'

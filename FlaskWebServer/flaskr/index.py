@@ -1,3 +1,10 @@
+# Part of COMP90024 Project Team members are
+# Ziyuan Xiao (940448)
+# Pengyu Mu(890756)
+# Dechao Sun (980546)
+# Seehoi Chow(980301)
+# Yuexin Li (959634)
+
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
