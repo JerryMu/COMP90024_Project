@@ -56,49 +56,12 @@ for dbname in dbnamelist:
         couchserver.replicate(couchdb_master_login_url+dbname,'http://admin:admin@'+child+':5984/'+dbname,create_target=True,continuous=True)
 """
 
-# access twitterApi's key and token
-# consumer_key = "oLA7aTp8LXxn4MtfSdGVjWTJQ"
-# consumer_secret = "SH6NDeJg5YkfcxOmtvxtu52FlHv9SddAyOzn12PKZPxc1nSw3C"
-# access_token = "1385952256810389507-9Kmzf60GptC1sLDEWr2gjthN5wIpct"
-# access_token_secret = "O9LyTLbi1Zhj6J3PVGBUhMmBBGhUm6I3HWFrgPg4IXUXu"
 
-# # 创建认证对象
-# auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-# # 设置你的access token和access secret
-# auth.set_access_token(access_token, access_token_secret)
-# # 传入认证信息，并创建API对象
-# api = tweepy.API(auth, timeout=15, wait_on_rate_limit=True)
 
-# 国家地区
-# places = api.geo_search(query="Australia", granularity="country", trim_place="false")
-# place_id = places[0].id
-
-# # Define the search term and the date_since date as variables
-# search = "place:%s fuck -filter:retweets" % place_id
-# date_since = "2018-11-16"
-
-# #tweets = tweepy.Cursor(api.search,
-# #          q=search,
-# #          lang="en",
-# #          since=date_since).items(600)
-
-# #tweets = api.search(q="place:%s fuck" % place_id)
-# all_tweets = []
-# for index, tweet in enumerate(tweepy.Cursor(api.search,q=search,lang="en",since=date_since, count=700).items()) :
-#     #print(index, tweet.text + " | " + tweet.place.name if tweet.place else "Undefined place")
-#     all_tweets.append({"id":str(tweet.id), "uid":str(tweet.user.id), "text":str(tweet.text), "created_at":str(tweet.created_at), "city":str(tweet.place.name), "country":str(tweet.place.country), "box":str(tweet.place.bounding_box.coordinates)})
-# n=1
-# for tweet in all_tweets:
-#     # pushdata(tweet,'tweet',couch_database)
-#     print("%d    ",n)
-#     print(tweet)
-#     n+=1
-# del(all_tweets)
-
-access_token = "1385967814641549321-jGS0DvV9lg12VRj3IFZThUy53rvHYz"
-access_token_secret = "gG1rV90iv75Mpc2ktcehI6gRokaQCletBROcRJRmYN0BI"
-consumer_key = "Q3sPmohSdtdUBdrP2DpBFzJY3"
-consumer_secret = "GgPQCbrjp20KuHsJdH7MXLbuKtFw96SXZJL1Pm3um42MnHg09l"
+access_token = "1385967814641549321-gcI3aTWLxSoeIQZCxqvXnn6OzPkKhc"
+access_token_secret = "V15cvOg2BrvdCxnMpaWzzucHnUuSbLCb4Le8u0qBpT6Ej"
+consumer_key = "6YDJHTL8hQwX4CvmrWO9Y5190"
+consumer_secret = "tIniChCVJZHOQU0jR0sSn3GFBZnG2p9kDX63nDCAubeZaeMpVs"
 # bbox = {
 #         "great_syd": [149.971885992, -34.33117400499998, 151.63054702400007, -32.99606922499993],
 #         "great_mel": [144.33363404800002, -38.50298801599996, 145.8784120140001, -37.17509899299995],
