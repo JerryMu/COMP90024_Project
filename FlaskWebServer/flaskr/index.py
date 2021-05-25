@@ -216,9 +216,9 @@ def scenario_3():
 
     for table_name in table_name:
         table = scenario_3_db[table_name]
-        happiness_values.append(round(table['Happy']['mean'], 2))
-        sadness_values.append(round(table['Sad']['mean'], 2))
-        angry_values.append(round(table['Angry']['mean'], 2))
+        happiness_values.append(round(table['Happy']['mean'], 3))
+        sadness_values.append(round(table['Sad']['mean'], 3))
+        angry_values.append(round(table['Angry']['mean'], 3))
     data = {
         'happiness_values': happiness_values,
         'sadness_values': sadness_values,

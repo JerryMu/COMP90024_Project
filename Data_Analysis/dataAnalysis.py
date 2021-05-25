@@ -304,11 +304,11 @@ def run():
     
     Output
     '''
-    Sydney_index_lst = tweet[tweet['city'] == 'Sydney'].sample(2000).index
-    Adelaide_index_lst = tweet[tweet['city'] == 'Adelaide'].sample(2000).index
-    Brisbane_index_lst = tweet[tweet['city'] == 'Brisbane'].sample(2000).index
-    Melbourne_index_lst = tweet[tweet['city'] == 'Melbourne'].sample(2000).index
-    Perth_index_lst = tweet[tweet['city'] == 'Perth (WA)'].sample(2000).index
+    Sydney_index_lst = tweet[tweet['city'] == 'Sydney'].sample(3000).index
+    Adelaide_index_lst = tweet[tweet['city'] == 'Adelaide'].sample(3000).index
+    Brisbane_index_lst = tweet[tweet['city'] == 'Brisbane'].sample(3000).index
+    Melbourne_index_lst = tweet[tweet['city'] == 'Melbourne'].sample(3000).index
+    Perth_index_lst = tweet[tweet['city'] == 'Perth (WA)'].sample(3000).index
 
     text_sentiment_Sydney = pd.DataFrame()
     text_sentiment_Sydney['text_sentiment'] = tweet.iloc[Sydney_index_lst, 4].apply(te.get_emotion)
