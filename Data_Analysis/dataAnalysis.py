@@ -411,6 +411,20 @@ def run():
 
     print('Scenario 4 finished')
 
+    try:
+        server.create("update_log")
+    except couchdb.http.PreconditionFailed:
+        pass
+    log_db = server['update_log']
+
+    try:
+        log_db['update_time'] = {'time': time.time()}
+    except couchdb.http.ResourceConflict:
+        log_db.delete(log_db['update_time'])
+        log_db['update_time'] = {'time': time.time()}
+
+
+    print(f'data update finished {time.time()}')
 
 # run every 30 minutes
 if __name__ == '__main__':

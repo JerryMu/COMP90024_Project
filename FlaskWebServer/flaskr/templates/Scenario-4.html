@@ -98,13 +98,13 @@ Build With Experience, About us, Our Projects, Planning for 2050, about Us, Our 
       </div>
     </section>
     <section class="u-clearfix u-palette-5-dark-3 u-section-2" id="sec-161e">
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+      <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-align-left u-border-12 u-border-palette-2-base u-container-style u-group u-radius-50 u-shape-round u-group-1" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-delay="0">
           <div class="u-container-layout u-container-layout-1">
             <div class="u-align-left u-container-style u-expanded-width-xs u-group u-group-2">
               <div class="u-container-layout u-container-layout-2">
                 <h3 class="u-text u-text-1">Chart Analysis:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h3>
-                <p class="u-text u-text-2">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+                <p class="u-text u-text-2">The diagram shows unemployment rate of year 2018 and 2020. Cause of COVID 19 the unemployemnt rate increased a lot at 2020.&nbsp;Based on the situation in Australia, it can be inferred that Australia may be due to the impact of COVID-19 on the entire market, which has caused the unemployment rate to drop a lot in 2020.</p>
               </div>
             </div>
             <div class="u-clearfix u-custom-html u-custom-html-1">
@@ -117,13 +117,9 @@ Build With Experience, About us, Our Projects, Planning for 2050, about Us, Our 
               <script type="text/javascript"> // Chart options
   var options2 = {
           series: [
-          {//Jerry,这是fake data,她做出来的是changed rate
-            name: "2018 change in unemployment rate for age 15-24",
-            data: [40.91,25.45,21.67,16.67,11.11]
-          },
           {
-            name: "2020 change in unemployment rate for age 15-24",
-            data: [36.46,30.89,24.80,4.23,0]
+            name: "Change in unemployment rate for age 15+",
+            data: flaskData.unemployment_value
           }
         ],
           chart: {
@@ -144,12 +140,16 @@ Build With Experience, About us, Our Projects, Planning for 2050, about Us, Our 
         },
         dataLabels: {
           enabled: true,
-        },
+        },tooltip:{
+		enabled:true,
+		  theme: "dark"
+	  },
+	  
         stroke: {
           curve: 'smooth'
         },
         title: {
-          text: 'The change in unemployment rate in 5 regions ( for age 15-24 )',
+          text: 'The change in youth employment rate（15+）',
           align: 'left'
         },
         grid: {
@@ -197,26 +197,22 @@ Build With Experience, About us, Our Projects, Planning for 2050, about Us, Our 
             <div class="u-align-left u-container-style u-expanded-width-xs u-group u-group-2">
               <div class="u-container-layout u-container-layout-2">
                 <h3 class="u-text u-text-1">Chart Analysis:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h3>
-                <p class="u-text u-text-2">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+                <p class="u-text u-text-2">Compare to year 2018, the youth employment rate increases at 2020. Companies prefer to use youth labour, it provides stable work.The interesting point is that although the overall unemployment rate has increased in 2020, the unemployment rate of young people has decreased, which means that more young people have found jobs and at meanwhile more employees have left their jobs. Therefore,we could infer that companies are more willing to recruit young people under the current circumstances.</p>
               </div>
             </div>
             <div class="u-clearfix u-custom-html u-custom-html-1">
               <meta charset="utf-8">
               <meta name="viewport" content="width = device-width, initial-scale=1.0">
-              <div class="container">
-                <div id="chart"></div>
+              <div class="container3">
+                <div id="chart9"></div>
               </div>
               <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
               <script type="text/javascript"> // Chart options
-  var options = {
+  var options9 = {
           series: [
-          {//Jerry,这是fake data,她做出来的是changed rate
-            name: "2018 change in unemployment rate for age 15+",
-            data: [40.91,25.45,21.67,16.67,11.11]
-          },
           {
-            name: "2020 change in unemployment rate for age 15-24",
-            data: [36.46,30.89,24.80,4.23,0]
+            name: "Change in unemployment rate for age 15-24",
+            data: flaskData.unemployment_value_youth
           }
         ],
           chart: {
@@ -237,12 +233,16 @@ Build With Experience, About us, Our Projects, Planning for 2050, about Us, Our 
         },
         dataLabels: {
           enabled: true,
-        },
+        },tooltip:{
+		enabled:true,
+		  theme: "dark"
+	  },
+	  
         stroke: {
           curve: 'smooth'
         },
         title: {
-          text: 'The change in unemployment rate in 5 regions ( for age 15+ )',
+          text: 'The change in youth employment rate（15-24）',
           align: 'left'
         },
         grid: {
@@ -276,19 +276,20 @@ Build With Experience, About us, Our Projects, Planning for 2050, about Us, Our 
           offsetX: -5
         }
         };
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
-        chart.render(); </script>
+        var chart9 = new ApexCharts(document.querySelector("#chart9"), options9);
+        chart9.render(); </script>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="u-clearfix u-valign-middle u-section-4" id="sec-f3de">
+    <section class="u-clearfix u-section-4" id="sec-f3de">
       <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
         <div class="u-layout">
           <div class="u-layout-row">
             <div class="u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
-              <div class="u-container-layout u-valign-middle u-container-layout-1">
+              <div class="u-container-layout u-container-layout-1">
+                <h6 class="u-text u-text-1">Figure Title:&nbsp; Vaccine&nbsp;complete&nbsp;rate&nbsp;in&nbsp;5&nbsp;regions</h6>
                 <div class="u-border-13 u-border-grey-75 u-clearfix u-custom-html u-custom-html-1" data-animation-name="zoomIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="">
                   <meta charset="utf-8">
                   <meta name="viewport" content="width = device-width, initial-scale=1.0">
@@ -300,7 +301,6 @@ Build With Experience, About us, Our Projects, Planning for 2050, about Us, Our 
     var options3 = {
             series: [1.715175,2.329991,1.642575,2.423823,2.245634],
             chart: {
-            width: 350,
             title: {
           text: 'Vaccine complete rate in 5 regions',
           align: 'center'
@@ -315,7 +315,6 @@ Build With Experience, About us, Our Projects, Planning for 2050, about Us, Our 
             breakpoint: 480,
             options: {
               chart: {
-                width: 350
               },
               legend: {
                 position: 'bottom'
@@ -328,14 +327,11 @@ Build With Experience, About us, Our Projects, Planning for 2050, about Us, Our 
                 </div>
               </div>
             </div>
-            <div class="u-container-style u-image u-layout-cell u-right-cell u-shading u-size-30 u-image-1" data-image-width="1000" data-image-height="1500">
-              <div class="u-container-layout u-container-layout-2">
-                <p class="u-text u-text-default u-text-1">
-                  <span style="font-size: 1.5rem;">Figure Title:&nbsp; Vaccine&nbsp;complete&nbsp;rate&nbsp;in&nbsp;5&nbsp;regions<br>
-                    <br>Analysis: 
-                  </span>
-                  <br>test<br>
-                  <br>test<br>test<br>test
+            <div class="u-black u-container-style u-layout-cell u-radius-50 u-right-cell u-shape-round u-size-30 u-layout-cell-2">
+              <div class="u-border-20 u-border-palette-2-base u-container-layout u-container-layout-2">
+                <p class="u-text u-text-2"><b>Chart Analysis: <br></b>
+                  <span style="font-size: 1rem;">The graph shows that vaccine complete proporation in 5 cities. According to this graph, we can know that Brisbane's vaccination rate is the lowest, and Perth's vaccination rate is the highest. It can be inferred that people living in Perth are more willing and acceptance of vaccines is relatively high.</span>
+                  <br>
                 </p>
               </div>
             </div>
@@ -402,7 +398,7 @@ Build With Experience, About us, Our Projects, Planning for 2050, about Us, Our 
               }
             },
             title: {
-              text: "Unemployment Rage Change",
+              text: "Unemployment Rate Change",
               style: {
                 color: '#008FFB',
               }
@@ -452,9 +448,11 @@ Build With Experience, About us, Our Projects, Planning for 2050, about Us, Our 
                 </div>
               </div>
             </div>
-            <div class="u-black u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
-              <div class="u-container-layout u-container-layout-2">
+            <div class="u-black u-container-style u-layout-cell u-radius-50 u-right-cell u-shape-round u-size-30 u-layout-cell-2">
+              <div class="u-border-20 u-border-palette-2-base u-container-layout u-container-layout-2">
                 <h2 class="u-text u-text-1">Chart Analysis:</h2>
+                <p class="u-text u-text-2">It shows the relation between 2020 unemployement rate and tweet happiness socre in 5 major cites. Comparing the happy status sentiment with the unemployment rate in each city, we discovered that Sydney has the highest unemployment rate changed, and the second lower happiness score which is almost the same as Perth. Melbourne as a culture center of Australia has an outstanding happiness sentiment which verifies the fact that Melbourne is one of the most livable cities.<br>Overall, the larger cities with a high development level tend to have a greater changed of the employment rate. In contrast, Perth has the both the lowest employment changed and the lowest happiness sentiment, because Because Perth itself has the highest unemployment rate, although it has not changed much before and after the epidemic, it is the city with the lowest happiness index.&nbsp;
+                </p>
               </div>
             </div>
           </div>
@@ -474,7 +472,8 @@ Build With Experience, About us, Our Projects, Planning for 2050, about Us, Our 
               </div>
               <div class="u-align-left u-container-style u-layout-cell u-size-42 u-white u-layout-cell-2">
                 <div class="u-container-layout u-valign-middle u-container-layout-2">
-                  <p class="u-text u-text-2">Pharetra magna ac placerat vestibulum lectus mauris ultrices. Ut pharetra sit amet aliquam id diam maecenas ultricies mi. Sollicitudin ac orci phasellus egestas tellus rutrum. Venenatis cras sed felis eget. Amet risus nullam eget felis eget nunc. Lacus vestibulum sed arcu non odio euismod. Consectetur adipiscing elit duis tristique.</p>
+                  <p class="u-text u-text-2">In conclusion, the pandemic affects the unemployment rate in some extent, but it is not the only cause. Although the Covid-19 situation is most serious in VIC, Greater Sydney has the largest unemployment rate change before and after the pandemic. It also gains a low score in sentiment analysis of ‘happiness’.<br>&nbsp;The employment rate for young people increases at the end of 2020(except Perth) as the overall unemployment rate increases. Perth is the least happy city among all. Though it has the lowest unemployment rate change, the original unemployment rate is higher than most of the cities. So, the pandemic didn’t affect the unemployment rate much, but the government needs to further study the long-term labor market to decrease the unemployment rate and we may expect an improvement in ‘happiness’ score as well.<br>
+                  </p>
                 </div>
               </div>
             </div>

@@ -108,6 +108,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/flaskr/templates/welcome-Page.html">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/flaskr/testApis.py">
           <value>
             <Attribute>

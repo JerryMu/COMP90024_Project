@@ -169,8 +169,10 @@ var chart1 = new ApexCharts(document.querySelector("#chart1"), options1);
 // Render chart
 chart1.render(); </script>
             </div>
-            <p class="u-text u-text-1">
-              <span style="font-size: 1.875rem;">Figure Analysis</span>:<br>Test<br>Test<br>Test<br>Test<br>Test<br>
+            <p class="u-text u-text-1"><b>
+                <span style="font-size: 1.875rem;">Figure Analysis (Happy):</span>
+                <br></b><b>This bar chart shows the happiness score of each city calculated from the tweet data. It can be seen from the figure that Melbourne contain more tweets with happy feelings.&nbsp;This calculation is based on natural language processing to analyze the degree of happiness in the entire sentence, and at the end it returns a score for each region to represent the degree of happiness in the current region.</b>
+              <br>
             </p>
           </div>
         </div>
@@ -191,7 +193,7 @@ chart1.render(); </script>
         </div>
         <div class="u-custom-color-7 u-preserve-proportions u-shape u-shape-circle u-shape-3"></div>
         <div class="u-align-left u-border-8 u-border-grey-75 u-container-style u-group u-radius-50 u-shape-round u-white u-group-1" data-animation-name="rotateIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="">
-          <div class="u-container-layout u-valign-top u-container-layout-1">
+          <div class="u-container-layout u-valign-bottom u-container-layout-1">
             <div class="u-clearfix u-custom-html u-custom-html-1">
               <meta charset="utf-8">
               <meta name="viewport" content="width = device-width, initial-scale=1.0">
@@ -249,8 +251,9 @@ var chart2 = new ApexCharts(document.querySelector("#chart2"), options2);
 // Render chart
 chart2.render(); </script>
             </div>
-            <p class="u-text u-text-1">
-              <span style="font-size: 1.875rem;">Figure Analysis</span>:<br>Test<br>Test<br>Test<br>Test<br>Test<br>
+            <p class="u-text u-text-1"><b>
+                <span style="font-size: 1.875rem;">Figure Analysis (Sad)</span>:<br></b><b>This histogram shows the sadness of each city calculated from the tweet sentiment analysis. It can be seen from the figure that Perth contains more tweets with sad feelings.&nbsp;Also, we can find that there is not much difference in the degree of sadness in the other 4 cities. This calculation is based on natural language processing to analyze the degree of Sadness in the entire sentence, and finally returns a score for each region to represent the degree of sadness in the current region.</b>
+              <br>
             </p>
           </div>
         </div>
@@ -329,113 +332,15 @@ var chart3 = new ApexCharts(document.querySelector("#chart3"), options3);
 // Render chart
 chart3.render(); </script>
             </div>
-            <p class="u-text u-text-1">
-              <span style="font-size: 1.875rem;">Figure Analysis</span>:<br>Test<br>Test<br>Test<br>Test<br>Test<br>
+            <p class="u-text u-text-1"><b>
+                <span style="font-size: 1.875rem;">Figure Analysis (Angry)</span>:<br></b><b>This histogram shows the degree of anger of each city calculated from the tweet sentiment analysis. It can be seen from the figure that Adelaide contain more tweets with angry feelings and Brisbane has less Angry emotion. We might conclude that based on Chart 1 and Chart 3, the Brisbane resident has happier life and low pressure.&nbsp;</b><b>This calculation is based on natural language processing to analyze the degree of Angry in the entire sentence, and finally returns a score for each region to represent the degree of Angry in the current region.</b>
+              <br>
             </p>
           </div>
         </div>
       </div>
     </section>
-    <section class="u-clearfix u-grey-10 u-valign-middle u-section-5" id="carousel_ef8d">
-      <div class="u-border-2 u-border-grey-75 u-container-style u-expanded-width u-group u-palette-4-base u-radius-50 u-shape-round u-group-1" data-animation-name="pulse" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="">
-        <div class="u-container-layout u-container-layout-1">
-          <div class="u-align-left u-border-1 u-border-grey-40 u-container-style u-group u-radius-50 u-shape-round u-white u-group-2">
-            <div class="u-container-layout u-valign-bottom u-container-layout-2">
-              <div class="u-clearfix u-custom-html u-custom-html-1">
-                <title></title><!-- Include fusioncharts core library -->
-                <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script><!-- Include fusion theme -->
-                <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
-                <script type="text/javascript"> //STEP 2 - Chart Data
-    const dataSource = {
-  chart: {
-    caption: "这是我们的Welcome Page",
-    captionFontColor: "#31c5c5",
-    subcaptionFontColor: "#31c5c5",
-    subcaption: "2021",
-    entityfillhovercolor: "#F8F8E9",
-    numbersuffix: "Population",
-    showlabels: "2",
-    borderthickness: "0.4",
-    theme: "fusion",
-    entitytooltext:
-      // "<b>$lname</b> has an average temperature of <b>$datavalue</b>"
-    "Sce1： 生育率：100% 死亡率：100%\nSce2： 接种率：100% 感染率：100%\n"
-  },
-  
-    bgColor: "#6647c9",
-  colorrange: {
-    minvalue: "231200",
-    code: "#00A971",
-    gradient: "1",
-    color: [
-      {
-        minvalue: "1829375",
-        maxvalue: "3658750",
-        code: "#EFD951"
-      }, 
-      {
-        minvalue: "3658750",
-        maxvalue: "5488125",
-        code: "#FD8963"
-      },
-      {
-        minvalue: "5488125",
-        maxvalue: "7400000",
-        code: "#D60100"
-      }
-    ]
-  },
-  data: [
-    {
-      id: "WA",
-      value: "2366900"
-    },
-    {
-      id: "NT",
-      value: "231200"
-    },
-    {
-      id: "SA",
-      value: "1659800"
-    },
-    {
-      id: "SW",
-      value: "7317500"
-    },
-    {
-      id: "VI",
-      value: "5640900"
-    },
-    {
-      id: "TA",
-      value: "511000"
-    },
-    {
-      id: "QU",
-      value: "4599400"
-    }
-    
-  ]
-};
-FusionCharts.ready(function() {
-  var myChart = new FusionCharts({
-    type: "maps/australia",
-    renderAt: "chart-container",
-    width: "100%",
-    height: "100%",
-    dataFormat: "json",
-    dataSource
-  }).render();
-}); </script>
-                <div id="chart-container"></div>
-              </div>
-            </div>
-          </div>
-          <p class="u-text u-text-1">左边是个地图</p>
-        </div>
-      </div>
-    </section>
-    <section class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-section-6" id="sec-26fb">
+    <section class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-section-5" id="sec-26fb">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <div class="u-expanded-width-xs u-palette-2-base u-shape u-shape-rectangle u-shape-1"></div>
         <img class="u-image u-image-1" src="{{ url_for('static', filename='images/fghh-min1.jpg') }}" data-image-width="4052" data-image-height="3088">
@@ -453,7 +358,7 @@ FusionCharts.ready(function() {
         <div class="u-align-left u-container-style u-group u-white u-group-1">
           <div class="u-container-layout u-container-layout-1">
             <h1 class="u-custom-font u-font-montserrat u-text u-text-body-color u-text-1">Scenario Analysis</h1>
-            <p class="u-text u-text-2">Elit ut aliquam purus sit amet luctus venenatis. Ridiculus mus mauris vitae ultricies leo integer malesuada. Massa enim nec dui nunc mattis enim. Sagittis vitae et leo duis ut. Lacus suspendisse faucibus interdum.</p>
+            <p class="u-text u-text-2">This Senario shows the emotional status of people in different regions. It is not difficult to find that people living in Brisbane are less angry and sad, and more happy than others. From this we can infer that people living in Brisbane may live pressure is less and they are more relaxed. Also, the level of grief among residents in Perth area will be significantly higher than that of other areas. There is little difference in the performance of the relationship status in other areas.</p>
           </div>
         </div>
       </div>

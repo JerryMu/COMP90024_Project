@@ -72,7 +72,7 @@
           </div>
         </nav>
       </div></header> 
-    <section class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-custom-color-4 u-section-1" id="sec-efee">
+    <section class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-border-1 u-border-grey-75 u-clearfix u-custom-color-4 u-section-1" id="sec-efee">
       <div class="u-palette-4-light-1 u-shape u-shape-rectangle u-shape-1"></div>
       <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
         <div class="u-layout">
@@ -91,10 +91,11 @@
       <div class="u-align-left u-container-style u-group u-white u-group-1" data-animation-name="zoomIn" data-animation-duration="1500" data-animation-delay="0" data-animation-direction="Down">
         <div class="u-container-layout u-container-layout-2">
           <h3 class="u-text u-text-palette-1-base u-text-2">COMP90024 Assignment 2</h3>
-          <p class="u-text u-text-3">Ziyuan Xiao 940448<br>Jerry Mu 123456<br>Roy Hoi 123456<br>Roy Girl 654321<br>Dechao Sun 112233
+          <p class="u-text u-text-3">Ziyuan Xiao 940448<br>Pengyu Mu 890756<br>Seehoi Chow 980301<br>Yuexin Li 959634<br>Dechao Sun 980546
           </p>
         </div>
       </div>
+      <p class="u-text u-text-4" data-animation-name="flash" data-animation-duration="2000" data-animation-delay="2000" data-animation-direction="">Last Data Update Time&nbsp;&nbsp;: 2021/5/25&nbsp; &nbsp; 19:30 AMT 8</p>
     </section>
     <section class="u-align-center u-clearfix u-custom-color-3 u-valign-middle-sm u-valign-middle-xs u-section-2" id="carousel_e21f">
       <h4 class="u-text u-text-palette-1-light-2 u-text-1">About this project</h4>
@@ -126,20 +127,20 @@
           </div>
         </div>
       </div>
-      <a href="files/Assignment2.pdf" class="u-active-white u-border-0 u-btn u-btn-round u-button-style u-file-link u-hover-white u-palette-4-light-1 u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-text-palette-1-base u-btn-5">learn more</a>
+      <a href="{{ url_for('static', filename='Assignment2.pdf') }}" class="u-active-white u-border-0 u-btn u-btn-round u-button-style u-file-link u-hover-white u-palette-4-light-1 u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-text-palette-1-base u-btn-5">learn more</a>
     </section>
-    <section class="u-clearfix u-custom-color-4 u-section-3" id="sec-54bd">
+    <section class="u-border-1 u-border-grey-75 u-clearfix u-custom-color-4 u-section-3" id="sec-54bd">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-expanded-height u-palette-4-base u-shape u-shape-rectangle u-shape-1"></div>
-        <div class="u-clearfix u-custom-color-4 u-custom-html u-custom-html-1">
+        <div class="u-border-4 u-border-black u-clearfix u-custom-color-4 u-custom-html u-custom-html-1" data-animation-name="bounceIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="Down">
           <title></title><!-- Include fusioncharts core library -->
           <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script><!-- Include fusion theme -->
           <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
           <script type="text/javascript"> //STEP 2 - Chart Data
     const dataSource = {
   chart: {
-    caption: "这是我们的Welcome Page",
-    captionFontColor: "#31c5c5",
+    caption: "Australia State Population",
+    captionFontColor: "#7efafa",
     subcaptionFontColor: "#31c5c5",
     subcaption: "2021",
     entityfillhovercolor: "#F8F8E9",
@@ -148,8 +149,7 @@
     borderthickness: "0.4",
     theme: "fusion",
     entitytooltext:
-      // "<b>$lname</b> has an average temperature of <b>$datavalue</b>"
-    "Sce1： 生育率：100% 死亡率：100%\nSce2： 接种率：100% 感染率：100%\n"
+      "<b>$lname</b> has an average temperature of <b>$datavalue</b>"
   },
   
     bgColor: "#6647c9",
@@ -177,7 +177,7 @@
   },
   data: [
     {
-      id: 'WA',
+      id: "WA",
       value: "2366900"
     },
     {
@@ -204,7 +204,7 @@
       id: "QU",
       value: "4599400"
     }
-
+    
   ]
 };
 FusionCharts.ready(function() {
@@ -219,11 +219,10 @@ FusionCharts.ready(function() {
 }); </script>
           <div id="chart-container"></div>
         </div>
-        <div class="u-align-left u-container-style u-group u-white u-group-1" data-animation-name="zoomIn" data-animation-duration="1500" data-animation-delay="0" data-animation-direction="Down">
+        <div class="u-align-left u-border-4 u-border-black u-container-style u-group u-radius-50 u-shape-round u-white u-group-1" data-animation-name="zoomIn" data-animation-duration="1500" data-animation-delay="0" data-animation-direction="Down">
           <div class="u-container-layout u-valign-bottom u-container-layout-1">
             <h3 class="u-text u-text-palette-1-base u-text-1">Map Explaination:</h3>
-            <p class="u-text u-text-2">Balbala<br>Balbala<br>Balbala<br>Balbala<br>Balbala<br>Balbala<br>
-            </p>
+            <p class="u-text u-text-2">This Map can give website visitors a general understanding of the population in each region. This allows users to have a general understanding of the number of people in the subsequent analysis. The division of this map is the regional division that we will analyze later.</p>
           </div>
         </div>
       </div>
@@ -290,9 +289,12 @@ FusionCharts.ready(function() {
           </div>
         </div>
         <div class="u-border-2 u-border-custom-color-1 u-container-style u-expanded-width-xs u-group u-white u-group-1" data-animation-name="bounceIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="">
-          <div class="u-container-layout u-container-layout-1">
+          <div class="u-container-layout u-valign-bottom u-container-layout-1">
             <h2 class="u-text u-text-1">The steps we followed:</h2>
-            <p class="u-text u-text-2">1. Ansible 创建 XXXXXXX<br>2. 在Twitter和AURIN获取数据<br>3. 数据分析<br>4. 数据可视化<br>5.&nbsp; Reporting
+            <p class="u-text u-text-2"><b>
+                <span style="font-weight: 400;">1. Use ansible to create instances on Melbourne research cloud.<br>2. Use Twitter-API streaming to fetch real-time tweets in Australia, and fetch AURIN database then store all data to CouchDB.<br>3. Use CouchDB mapreduce and Pandas dataframe to analyze Twitter and AURAIN data to prove four scenarios.<br>4. Data visualization with Apex Chart and Javascript.<br>5. Combine the design and implementation process and all scenarios into a well-structured report.
+                </span>
+                <br></b>
             </p>
           </div>
         </div>
