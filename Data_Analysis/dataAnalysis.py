@@ -311,23 +311,23 @@ def run():
     Perth_index_lst = tweet[tweet['city'] == 'Perth (WA)'].sample(2000).index
 
     text_sentiment_Sydney = pd.DataFrame()
-    text_sentiment_Sydney['text_sentiment'] = tweet.iloc[Sydney_index_lst,5].apply(te.get_emotion)
+    text_sentiment_Sydney['text_sentiment'] = tweet.iloc[Sydney_index_lst, 4].apply(te.get_emotion)
     text_sentiment_Sydney = text_sentiment_Sydney['text_sentiment'].apply(pd.Series)
 
     text_sentiment_Adelaide = pd.DataFrame()
-    text_sentiment_Adelaide['text_sentiment'] = tweet.iloc[Adelaide_index_lst,5].apply(te.get_emotion)
+    text_sentiment_Adelaide['text_sentiment'] = tweet.iloc[Adelaide_index_lst, 4].apply(te.get_emotion)
     text_sentiment_Adelaide = text_sentiment_Adelaide['text_sentiment'].apply(pd.Series)
 
     text_sentiment_Brisbane = pd.DataFrame()
-    text_sentiment_Brisbane['text_sentiment'] = tweet.iloc[Brisbane_index_lst,5].apply(te.get_emotion)
+    text_sentiment_Brisbane['text_sentiment'] = tweet.iloc[Brisbane_index_lst, 4].apply(te.get_emotion)
     text_sentiment_Brisbane = text_sentiment_Brisbane['text_sentiment'].apply(pd.Series)
 
     text_sentiment_Melbourne = pd.DataFrame()
-    text_sentiment_Melbourne['text_sentiment'] = tweet.iloc[Melbourne_index_lst,5].apply(te.get_emotion)
+    text_sentiment_Melbourne['text_sentiment'] = tweet.iloc[Melbourne_index_lst, 4].apply(te.get_emotion)
     text_sentiment_Melbourne = text_sentiment_Melbourne['text_sentiment'].apply(pd.Series)
 
     text_sentiment_Perth = pd.DataFrame()
-    text_sentiment_Perth['text_sentiment'] = tweet.iloc[Perth_index_lst,5].apply(te.get_emotion)
+    text_sentiment_Perth['text_sentiment'] = tweet.iloc[Perth_index_lst, 4].apply(te.get_emotion)
     text_sentiment_Perth = text_sentiment_Perth['text_sentiment'].apply(pd.Series)
 
     try:
