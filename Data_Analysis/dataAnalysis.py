@@ -198,11 +198,11 @@ def run():
     text_len_at_different_day: tweet length for days of week
     
     '''
-    num_tweet_syd = ct_tweet_count['Sydney']
-    num_tweet_melb = ct_tweet_count['Melbourne']
-    num_tweet_brisbane = ct_tweet_count['Brisbane']
-    num_tweet_perth = ct_tweet_count['Perth (WA)']
-    num_tweet_adelaide = ct_tweet_count['Adelaide']
+    num_tweet_syd = int(ct_tweet_count['Sydney'])
+    num_tweet_melb = int(ct_tweet_count['Melbourne'])
+    num_tweet_brisbane = int(ct_tweet_count['Brisbane'])
+    num_tweet_perth = int(ct_tweet_count['Perth (WA)'])
+    num_tweet_adelaide = int(ct_tweet_count['Adelaide'])
     num_tweet_ct = {'Sydney': num_tweet_syd, 'Melbourne': num_tweet_melb, 'Brisbane': num_tweet_brisbane,
                     'Perth (WA)': num_tweet_perth, 'Adelaide': num_tweet_adelaide}
 
