@@ -38,7 +38,7 @@ def welcome_page():
         'population': list(covid_data['Population(state)'])
     }
 
-    return render_template('Welcome-Page.html', data=data)
+    return render_template('welcome-Page.html', data=data)
 
 
 @bp.route('/scenario_1', methods=['GET', 'POST'])
