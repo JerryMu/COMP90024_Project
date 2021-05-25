@@ -18,12 +18,14 @@ bp = Blueprint('main', __name__, url_prefix='/main')
 @bp.route('/index', methods=['GET', 'POST'])
 def index():
     welcome_db = get_db('scenario_1')
+    log_db = get_db('update_log')
     covid_data = welcome_db['covid_data']
     state_population = []
     for city,population in zip(covid_data['Unnamed: 0'].values(), covid_data['Population(state)'].values()):
         state_population.append({'id': city, 'value':str(population)})
     data = {
-        'state_population': state_population
+        'state_population': state_population,
+        'update_time': log_db['update_time']['time']
     }
     return render_template('index.html', data=data)
 
@@ -32,9 +34,11 @@ def index():
 def welcome_page():
     welcome_db = get_db('scenario_1')
     covid_data = welcome_db['covid_data']
+    log_db = get_db('update_log')
     data = {
         'state_name': list(covid_data['Unnamed: 0']),
-        'population': list(covid_data['Population(state)'])
+        'population': list(covid_data['Population(state)']),
+        'update_time': log_db['update_time']['time']
     }
 
     return render_template('welcome-Page.html', data=data)

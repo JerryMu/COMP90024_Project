@@ -4,6 +4,7 @@ import text2emotion as te
 import couchdb
 import time
 import random
+from datetime import datetime
 
 random.seed(42)
 MASTER_NODE_URL = 'http://admin:admin@172.26.128.217:5984/'
@@ -416,15 +417,16 @@ def run():
     except couchdb.http.PreconditionFailed:
         pass
     log_db = server['update_log']
-
+    now = datetime.now()
+    dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
     try:
-        log_db['update_time'] = {'time': time.time()}
+        log_db['update_time'] = {'time': dt_string}
     except couchdb.http.ResourceConflict:
         log_db.delete(log_db['update_time'])
-        log_db['update_time'] = {'time': time.time()}
+        log_db['update_time'] = {'time': dt_string}
 
 
-    print(f'data update finished {time.time()}')
+    print(f'data update finished {dt_string}')
 
 # run every 30 minutes
 if __name__ == '__main__':

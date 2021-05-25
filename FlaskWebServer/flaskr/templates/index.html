@@ -95,7 +95,12 @@
           </p>
         </div>
       </div>
-      <p class="u-text u-text-4" data-animation-name="flash" data-animation-duration="2000" data-animation-delay="2000" data-animation-direction="">Last Data Update Time&nbsp;&nbsp;: 2021/5/25&nbsp; &nbsp; 19:30 AMT 8</p>
+        <script>
+            window.onload = function(){
+                document.getElementById('output').innerHTML = 'Last data update time: '+flaskData.update_time;
+            };
+        </script>
+      <p class="u-text u-text-4" data-animation-name="flash" data-animation-duration="2000" data-animation-delay="2000" data-animation-direction="" id="output"></p>
     </section>
     <section class="u-align-center u-clearfix u-custom-color-3 u-valign-middle-sm u-valign-middle-xs u-section-2" id="carousel_e21f">
       <h4 class="u-text u-text-palette-1-light-2 u-text-1">About this project</h4>
