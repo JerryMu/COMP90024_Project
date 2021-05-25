@@ -3,7 +3,9 @@ import pandas as pd
 import text2emotion as te
 import couchdb
 import time
+import random
 
+random.seed(42)
 MASTER_NODE_URL = 'http://admin:admin@172.26.128.217:5984/'
 '''
 Load tweets
@@ -304,6 +306,7 @@ def run():
     
     Output
     '''
+    
     Sydney_index_lst = tweet[tweet['city'] == 'Sydney'].sample(3000).index
     Adelaide_index_lst = tweet[tweet['city'] == 'Adelaide'].sample(3000).index
     Brisbane_index_lst = tweet[tweet['city'] == 'Brisbane'].sample(3000).index
