@@ -18,14 +18,15 @@ bp = Blueprint('main', __name__, url_prefix='/main')
 @bp.route('/index', methods=['GET', 'POST'])
 def index():
     welcome_db = get_db('scenario_1')
+    log_db = get_db('update_log')
     covid_data = welcome_db['covid_data']
     state_population = []
     for city,population in zip(covid_data['Unnamed: 0'].values(), covid_data['Population(state)'].values()):
         state_population.append({'id': city, 'value':str(population)})
     data = {
-        'state_population': state_population
+        'state_population': state_population,
+        'update_time': log_db['update_time']['time']
     }
-    print(state_population)
     return render_template('index.html', data=data)
 
 
@@ -33,9 +34,11 @@ def index():
 def welcome_page():
     welcome_db = get_db('scenario_1')
     covid_data = welcome_db['covid_data']
+    log_db = get_db('update_log')
     data = {
         'state_name': list(covid_data['Unnamed: 0']),
-        'population': list(covid_data['Population(state)'])
+        'population': list(covid_data['Population(state)']),
+        'update_time': log_db['update_time']['time']
     }
 
     return render_template('welcome-Page.html', data=data)
@@ -231,10 +234,10 @@ def scenario_3():
 def scenario_4():
     scenario_4_db = get_db('scenario_4')
     unemployment_value = list(scenario_4_db['change_in_unemployment_rate'].values())[2:]
-    unemployment_value_youth = list(scenario_4_db['change_in_youth_employment_rate'].values)[2:]
+    unemployment_value_youth = list(scenario_4_db['change_in_youth_employment_rate'].values())[2:]
     data = {
-        'unemployment_value': unemployment_value,
-        'unemployment_value_youth': unemployment_value_youth
+        'unemployment_value': [round(rate * 100, 1) for rate in unemployment_value],
+        'unemployment_value_youth': [round(rate * 100, 1) for rate in unemployment_value_youth]
 
     }
     return render_template('Scenario-4.html', data=data)

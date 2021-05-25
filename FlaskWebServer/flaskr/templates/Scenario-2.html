@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html style="font-size: 16px;">
+    <script>
+        var flaskData = JSON.parse('{{data | tojson}}');
+    </script>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
@@ -15,9 +18,6 @@
     <meta name="generator" content="Nicepage 3.15.3, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Merriweather:300,300i,400,400i,700,700i,900,900i">
-      <script>
-          var flaskData = JSON.parse('{{data | tojson}}');
-      </script>
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -155,8 +155,9 @@
         chart2.render(); </script>
                 </div>
                 <div class="u-container-style u-group u-radius-50 u-shape-round u-white u-group-1" data-animation-name="bounceIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="">
-                  <div class="u-container-layout u-container-layout-2">
-                    <p class="u-align-center u-text u-text-1">各地区人口数</p>
+                  <div class="u-container-layout u-valign-middle u-container-layout-2">
+                    <p class="u-align-center u-text u-text-1"><b>Pie-chart 2: Comparison of population in different Greater Capital City</b>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -198,8 +199,9 @@
           chart1.render(); </script>
                 </div>
                 <div class="u-container-style u-expanded-width u-group u-radius-50 u-shape-round u-white u-group-2" data-animation-name="bounceIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="Down">
-                  <div class="u-container-layout u-container-layout-4">
-                    <p class="u-align-center u-text u-text-2">各地区发tw数</p>
+                  <div class="u-container-layout u-valign-middle u-container-layout-4">
+                    <p class="u-align-center u-text u-text-2" data-animation-name="bounceIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction=""><b>Pie-chart 1: Proportion of the number of tweet collected in different Greater Capital City</b>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -213,7 +215,7 @@
         <div class="u-expanded-width u-list u-list-1">
           <div class="u-repeater u-repeater-1">
             <div class="u-align-center u-container-style u-list-item u-palette-3-base u-radius-50 u-repeater-item u-shape-round u-list-item-1" data-animation-name="zoomIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="">
-              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
+              <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-1">
                 <div class="u-clearfix u-custom-html u-custom-html-1">
                   <meta charset="utf-8">
                   <meta name="viewport" content="width = device-width, initial-scale=1.0">
@@ -306,7 +308,9 @@
         var chart3 = new ApexCharts(document.querySelector("#chart3"), options3);
         chart3.render(); </script>
                 </div>
-                <p class="u-text u-text-1">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttestt<br>test<br>test<br>test<br>est
+                <p class="u-text u-text-1"><b>Chart Analysis:</b>
+                  <br><b>Generally, people in Melbourne and Sydney tweet more. On Wednesday, the number of tweets in all areas reached the bottom. Especially for Sydney, there is a dramatic drop compared with adjacent days. After that, an increasing trend occurs and the peak appears on Saturday where people tweet much more than usual.&nbsp;</b>
+                  <br>
                 </p>
               </div>
             </div>
@@ -319,7 +323,7 @@
         <div class="u-expanded-width u-list u-list-1">
           <div class="u-repeater u-repeater-1">
             <div class="u-align-center u-container-style u-list-item u-palette-3-base u-radius-50 u-repeater-item u-shape-round u-list-item-1" data-animation-name="zoomIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="">
-              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
+              <div class="u-container-layout u-similar-container u-container-layout-1">
                 <div class="u-clearfix u-custom-html u-custom-html-1">
                   <meta charset="utf-8">
                   <meta name="viewport" content="width = device-width, initial-scale=1.0">
@@ -412,7 +416,8 @@
         var chart4 = new ApexCharts(document.querySelector("#chart4"), options4);
         chart4.render(); </script>
                 </div>
-                <p class="u-text u-text-1">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttestt<br>test<br>test<br>test<br>est
+                <p class="u-text u-text-1"><b>Chart Analysis:<br></b><b>After converting the time, there is a pattern that people have less time on tweeting in the morning, before lunch time;&nbsp; but tweet more at night, particularly before bed time(around midnight).&nbsp;</b>
+                  <br>
                 </p>
               </div>
             </div>
@@ -425,7 +430,7 @@
         <div class="u-expanded-width u-list u-list-1">
           <div class="u-repeater u-repeater-1">
             <div class="u-align-center u-container-style u-list-item u-palette-3-base u-radius-50 u-repeater-item u-shape-round u-list-item-1">
-              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
+              <div class="u-container-layout u-similar-container u-container-layout-1">
                 <div class="u-clearfix u-custom-html u-custom-html-1" data-animation-name="zoomIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="">
                   <meta charset="utf-8">
                   <meta name="viewport" content="width = device-width, initial-scale=1.0">
@@ -481,7 +486,7 @@
           curve: 'smooth'
         },
         title: {
-          text: 'Twitter average words on each weekday in 5 regions',
+          text: 'Twitter average words count on each weekday in 5 regions',
           align: 'left'
         },
         grid: {
@@ -518,7 +523,8 @@
         var chart5 = new ApexCharts(document.querySelector("#chart5"), options5);
         chart5.render(); </script>
                 </div>
-                <p class="u-text u-text-1">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttestt<br>test<br>test<br>test<br>est
+                <p class="u-text u-text-1"><b>Chart Analysis:</b>
+                  <br><b>As mentioned before, people tweet more on Saturday. However, they tend to write shorter tweets on Saturday as well. Among all, Sydney and Melbourne have relatively constant data. People in Perth are long-twitter lovers, especially on Friday.&nbsp;</b>
                 </p>
               </div>
             </div>
@@ -527,11 +533,11 @@
       </div>
     </section>
     <section class="u-clearfix u-white u-section-7" id="carousel_8489">
-      <div class="u-clearfix u-sheet u-valign-bottom u-sheet-1">
+      <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-expanded-width u-list u-list-1">
           <div class="u-repeater u-repeater-1">
             <div class="u-align-center u-container-style u-list-item u-palette-3-base u-radius-50 u-repeater-item u-shape-round u-list-item-1" data-animation-name="zoomIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="">
-              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
+              <div class="u-container-layout u-similar-container u-container-layout-1">
                 <div class="u-clearfix u-custom-html u-custom-html-1">
                   <meta charset="utf-8">
                   <meta name="viewport" content="width = device-width, initial-scale=1.0">
@@ -624,7 +630,9 @@
         var chart6 = new ApexCharts(document.querySelector("#chart6"), options6);
         chart6.render(); </script>
                 </div>
-                <p class="u-text u-text-1">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttestt<br>test<br>test<br>test<br>est
+                <p class="u-text u-text-1"><b>Chart Analysis:</b>
+                  <br><b>We cannot find any obvious trend. But it is unsurprising to see that people usually write longer tweets during the lunch break and after work time.&nbsp;</b>
+                  <br>
                 </p>
               </div>
             </div>
@@ -635,15 +643,16 @@
     <section class="u-align-center u-clearfix u-section-8" id="sec-876a">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-border-12 u-border-palette-3-base u-container-style u-expanded-width u-group u-radius-50 u-shape-round u-group-1" data-animation-name="pulse" data-animation-duration="2000" data-animation-delay="0" data-animation-direction="">
-          <div class="u-container-layout u-container-layout-1">
+          <div class="u-container-layout u-valign-bottom u-container-layout-1">
             <h2 class="u-align-left u-text u-text-1">Analysis：<br>
               <br>
             </h2>
+            <p class="u-align-left u-text u-text-2"><b>Tweeting behavior is strongly influenced by people’s daily schedule. When it comes to company hours and school time, people are less active on Twitter. People tweet more and longer when it is close to or during the break time. Also, in more modern cities like Sydney and Melbourne, people spend more time on tweeting. That can be explained by the age composition in different areas. It is known that young people like to stay in metropolises and they are also the mainstream users on social media.<br>
+                <br>An interesting phenomenon is, all people like to tweet long tweets at night. At that time, people tend to be more emotional than daytime so they would be more likely to express themselves on the internet.<br></b>
+              <br>
+            </p>
           </div>
         </div>
-        <p class="u-align-left u-text u-text-2">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest<br>testtesttest<br>test<br>test<br>testtest<br>test<br>test<br>
-          <br>
-        </p>
       </div>
     </section>
     

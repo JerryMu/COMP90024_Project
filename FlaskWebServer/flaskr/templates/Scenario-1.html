@@ -126,6 +126,18 @@
     },
     dataLabels: {
       enabled: true
+    },
+	  tooltip:{
+		enabled:true,
+		  theme: "dark"
+	  },
+    title: {
+      align: "center",
+      margin: 20,
+      offsetY: 20,
+      style: {
+        fontSize: "16px"
+      }
     }
   };
   // Init chart
@@ -136,7 +148,7 @@
                     </div>
                   </div>
                   <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
-                    <div class="u-container-layout u-valign-top u-container-layout-2">
+                    <div class="u-container-layout u-valign-bottom u-container-layout-2">
                       <div class="u-clearfix u-custom-html u-custom-html-2">
                         <meta charset="utf-8">
                         <meta name="viewport" content="width = device-width, initial-scale=1.0">
@@ -171,6 +183,10 @@ var options2 = {
   fill: {
     colors: ["#7147c9"]
   },
+	tooltip:{
+		enabled:true,
+		  theme: "dark"
+	  },
   dataLabels: {
     enabled: true
   }
@@ -186,11 +202,24 @@ chart2.render(); </script>
               </div>
               <div class="u-size-30">
                 <div class="u-layout-row">
-                  <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-3">
-                    <div class="u-container-layout u-container-layout-3"></div>
+                  <div class="u-container-style u-layout-cell u-radius-50 u-shape-round u-size-30 u-layout-cell-3">
+                    <div class="u-border-16 u-border-palette-4-dark-1 u-container-layout u-valign-top u-container-layout-3">
+                      <p class="u-text u-text-1"><b>Chart Analysis:</b>
+                        <br>
+                        <span style="font-size: 1rem;"> This chart illustrates the total number of tweets mentioned COVID-19. Actually, in this figure, we can see Sydney and Melbourne have the most number of COVID-19 twitter. But one thing should be noticed that these two areas have more population than the others. Thus, we calculated all 5 areas amount and let it divide by 1000 to get the average situation on Chart 2 on the Right.</span>
+                        <br>
+                      </p>
+                    </div>
                   </div>
-                  <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-4">
-                    <div class="u-container-layout u-container-layout-4"></div>
+                  <div class="u-container-style u-layout-cell u-radius-50 u-shape-round u-size-30 u-layout-cell-4">
+                    <div class="u-border-20 u-border-palette-4-dark-1 u-container-layout u-valign-top u-container-layout-4">
+                      <p class="u-text u-text-2"><b>Chart Analysis:</b>
+                        <br>
+                        <span style="font-size: 1rem;"> This chart we illustrate the number of tweets mentioned COVID-19 per thousand tweets. Since these five areas have different populations, I calculated the average situation for analysis. Based on these charts, we could conclude that people in Brisbane and Perth pay less attention on COVID-19 recently, and people in Sydney usually care about COVID-19.<br>
+                        </span>
+                        <br>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -232,17 +261,32 @@ var options3 = {
   series: [
     {
       name: "The number of people who is/was infected within 100 people in this state.",
-      data: flaskData.infection_100_value
+      data: [
+      0.068023,0.307455,0.030628,0.038056,0.041907
+      ]
     }
   ],
   xaxis: {
-    categories: flaskData.infection_100_key
+    categories: [
+      "Sydney",
+      "Melbourne",
+      "Brisbane",
+      "Perth (WA)",
+      "Adelaide"
+  ,  ]
   },
   fill: {
     colors: ["#7147c9"]
   },
+	tooltip:{
+		enabled:true,
+		  theme: "dark"
+	  },
   dataLabels: {
-    enabled: true
+    enabled: true,
+    Style:{
+      color:"#333"
+    }
   },
   // title: {
   //   text: "The number of people who is/was infected within 100 people in this state.",
@@ -288,15 +332,27 @@ var options4 = {
   series: [
     {
       name: "The number of people who complete 2 doese vaccination within 100 people in this state.",
-      data: flaskData.vaccination_100_value
+      data: [
+      1.715175,2.329991,1.642575,2.423823,2.245634
+      ]
     }
   ],
   xaxis: {
-    categories: flaskData.vaccination_100_key
+    categories: [
+      "Sydney",
+      "Melbourne",
+      "Brisbane",
+      "Perth (WA)",
+      "Adelaide"
+  ,  ]
   },
   fill: {
     colors: ["#7147c9"]
   },
+	tooltip:{
+		enabled:true,
+		  theme: "dark"
+	  },
   dataLabels: {
     enabled: true
   },
@@ -321,11 +377,23 @@ chart4.render(); </script>
               </div>
               <div class="u-size-30">
                 <div class="u-layout-row">
-                  <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-3">
-                    <div class="u-container-layout u-container-layout-3"></div>
+                  <div class="u-container-style u-layout-cell u-radius-50 u-shape-round u-size-30 u-layout-cell-3">
+                    <div class="u-border-20 u-border-palette-4-dark-1 u-container-layout u-container-layout-3">
+                      <p class="u-text u-text-default u-text-1">Chart Analysis (Infection Rate):<br>
+                        <span style="font-size: 1rem; font-weight: normal;">Based on this chart, we could conclude that: the people in Melbourne has highest infection rate and Brisbane, Perth and Adelaide has the lower infection rate. Also, the infection rate in Melbourne is almost 10 times of these three cities' infection rate.</span>
+                        <br>
+                      </p>
+                    </div>
                   </div>
-                  <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-4">
-                    <div class="u-container-layout u-container-layout-4"></div>
+                  <div class="u-container-style u-layout-cell u-radius-50 u-shape-round u-size-30 u-layout-cell-4">
+                    <div class="u-border-20 u-border-palette-4-dark-1 u-container-layout u-valign-top u-container-layout-4">
+                      <p class="u-text u-text-2">Chart Analysis (Vaccine Rate):<br>
+                        <span style="font-size: 1rem;">
+                          <span style="font-weight: normal;">In this graph, we show the vaccination rates in various regions. According to the graph, we can find that Perth has the highest vaccination rate up to 2.42 per 1000 people. Although according to Chart2 we know that Melbourne had the largest number of infections at the time, but Their vaccination rates are mediocre.</span>
+                        </span>
+                        <br>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -334,11 +402,16 @@ chart4.render(); </script>
         </div>
       </div>
     </section>
-    <section class="u-clearfix u-custom-color-3 u-section-4" id="sec-58c4">
+    <section class="u-border-2 u-border-grey-75 u-clearfix u-custom-color-3 u-section-4" id="sec-58c4">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h3 class="u-text u-text-1">Scenario Analysis:<br>
-        </h3>
-        <p class="u-text u-text-2">各种各样的分析,可以把report内容发到这</p>
+        <div class="u-border-20 u-border-palette-4-dark-1 u-container-style u-group u-radius-27 u-shape-round u-group-1">
+          <div class="u-container-layout">
+            <h3 class="u-text u-text-1">Scenario Analysis:<br>
+            </h3>
+            <p class="u-text u-text-2"><b>Melbourne, Sydney and Adelaide have more tweets related to Covid-19 and they are indeed the top three capital cities having the highest infection rate. The vaccination complet rate doesn’t differ much between each city, but those three areas still have a slightly higher rate than others. Maybe citizens in those areas are more willing to use the vaccine to protect themselves and the government’s arrangement is more active. As a result, people’s attention to Co<span style="font-weight: 400;"></span>vid-19 does related to the real Covid-19 situation.However, we all know that such a high infection in Mel<span style="font-weight: 400;">b</span>ourne is mostly caused by the international flight. Thus we cannot simply conclude there is any infrastructure problem in Greater Melbourne.</b>
+            </p>
+          </div>
+        </div>
         <img src="{{ url_for('static', filename='images/1.jpg') }}" alt="" class="u-image u-image-round u-radius-10 u-image-1" data-image-width="900" data-image-height="878">
       </div>
     </section>
